@@ -1,11 +1,11 @@
-return
+return 
     {
-        "catppuccin/nvim", 
+        "Mofiqul/dracula.nvim",
+        name = "dracula",
         lazy = false,
-        name = "catpuccin",
-        priority = 1000,
+        priority = 1000, 
         -- config = function()
         --     vim.opt.background = "dark" -- set this to dark or light
-        --     vim.cmd.colorscheme "catppuccin"
+        --     vim.cmd.colorscheme "dracula"
         -- end
     }
