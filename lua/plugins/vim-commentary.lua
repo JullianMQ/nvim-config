@@ -1,4 +1,4 @@
-return 
+return
 {
     "tpope/vim-commentary",
     name = "comment_line",
