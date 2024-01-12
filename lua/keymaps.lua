@@ -34,3 +34,6 @@ vim.keymap.set('n', '<c-down>', '<c-w>-', {noremap = true, silent = true})
 vim.keymap.set('n', '<c-left>', '<c-w>>', {noremap = true, silent = true})
 vim.keymap.set('n', '<c-right>', '<c-w><', {noremap = true, silent = true})
 
+--Buffers and Terminal Mode
+vim.keymap.set('n', '<C-\\>', ':bd<CR>', {noremap = true, silent = true})
+vim.keymap.set('t', '<C-h>', '<C-\\><C-n>', {noremap = true, silent = true})

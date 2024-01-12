@@ -1,18 +1,12 @@
 return {
-    -- Available options:
-    --     catppuccin
-    --     dracula
-    --     kanagawa
-    --     moonfly/nightfly
-    --     oxocarbon
     {
         "catppuccin/nvim",
         lazy = false,
         name = "catpuccin",
         priority = 1000,
         config = function()
-            vim.opt.background = "light" -- set this to dark or light
-            vim.cmd.colorscheme("moonfly")
+            vim.o.background = "dark" -- set this to dark or light
+            vim.cmd.colorscheme("newpaper")
         end,
     },
     {
@@ -40,15 +34,20 @@ return {
         priority = 1000,
     },
     {
-        "nyoom-engineering/oxocarbon",
-        name = "oxocarbon",
-        lazy = false,
-        priority = 1000,
-    },
-    {
         "AlexvZyl/nordic.nvim",
         name = "nordic",
         lazy = false,
         priority = 1000,
+    },
+    {
+        "yorik1984/newpaper.nvim",
+        name = "newpaper",
+        lazy = false,
+        priority = 1000,
+        config = function ()
+            require("newpaper").setup({
+                style = "dark"
+            })
+        end
     },
 }

@@ -29,7 +29,6 @@ vim.cmd("set wildmenu")
 vim.cmd("set wildmode=list:longest")
 vim.o.wildignore = '*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx'
 vim.o.colorcolumn = "100"
-vim.cmd([[highlight ColorColumn term=bold ctermfg=Cyan guifg=#80a0ff gui=bold]])
 
 -- If the current file type is HTML, set indentation to 2 spaces
 vim.api.nvim_exec([[
