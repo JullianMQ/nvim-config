@@ -6,8 +6,8 @@ But so far it's been a fun journey.
 Here's the list of the plugins that I have used:
 
 Nice to have:
-Vim surround - tpope
-Vim commentary - tpope
+- Vim surround - tpope
+- Vim commentary - tpope
 
 Colorschemes:
 - Catppuccin
