@@ -10,8 +10,12 @@ Vim surround - tpope
 Vim commentary - tpope
 
 Colorschemes:
-Catppuccin
-Dracula
+- Catppuccin
+- Dracula
+- Kanagawa
+- newpaper
+- habamax
+- nordic
 
 LSP Configs: 
 
