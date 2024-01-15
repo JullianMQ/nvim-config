@@ -6,7 +6,7 @@ return {
         priority = 1000,
         config = function()
             vim.o.background = "dark" -- set this to dark or light
-            vim.cmd.colorscheme("newpaper")
+            vim.cmd.colorscheme("rose-pine")
         end,
     },
     {
@@ -44,10 +44,16 @@ return {
         name = "newpaper",
         lazy = false,
         priority = 1000,
-        config = function ()
-            require("newpaper").setup({
-                style = "dark"
-            })
-        end
+        -- config = function ()
+        --     require("newpaper").setup({
+        --         style = "dark"
+        --     })
+        -- end
     },
+    {
+        "rose-pine/neovim",
+        name = "rose-pine",
+        lazy = false,
+        priority = 1000,
+    }
 }
