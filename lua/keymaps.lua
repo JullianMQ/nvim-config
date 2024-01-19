@@ -28,7 +28,7 @@ keymap.set("n", "n", "nzz", { noremap = true, silent = true })
 keymap.set("n", "N", "Nzz", { noremap = true, silent = true })
 
 -- Yank from cursor to the end of line without newline
-keymap.set("n", "Y", "y$h", { noremap = true, silent = true })
+keymap.set("n", "Y", "\"+y", { noremap = true, silent = true })
 
 --Navigate split view better
 keymap.set("n", "<c-j>", "<c-w>j", { noremap = true, silent = true })
