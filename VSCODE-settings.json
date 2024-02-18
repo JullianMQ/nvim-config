@@ -1,0 +1,37 @@
+{
+    "workbench.colorTheme": "Abyss",
+    "vim.camelCaseMotion.enable": true,
+    "vim.cursorStylePerMode.insert": "block",
+    "vim.cursorStylePerMode.normal": "block",
+    "vim.easymotion": true,
+    "vim.highlightedyank.enable": true,
+    "vim.leader": " ",
+    "vim.replaceWithRegister": true,
+    "vim.sneak": true,
+    "vim.smartRelativeLine": true,
+    "vim.sneakUseIgnorecaseAndSmartcase": true,
+    "vim.insertModeKeyBindingsNonRecursive": [
+        {
+            "before": [ "j", "j" ],
+            "after": [ "<ESC>" ]
+        },
+        {
+            "before": [ "<", "?", "p" ],
+            "after": [ "<", "?", "p", "h", "p", "?", ">", "<ESC>", "h", "i" ]
+        },
+        {
+            "before": [ "<", "?", "=" ],
+            "after": [ "<", "?", "=", "?", ">", "<ESC>", "h", "i" ]
+        },
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": ["Y"],
+            "after": ["\"", "+","y"]
+        },
+    ],
+    "liveServer.settings.donotVerifyTags": true,
+    "workbench.sideBar.location": "right",
+    "workbench.activityBar.location": "hidden",
+    "git.confirmSync": false,
+}
