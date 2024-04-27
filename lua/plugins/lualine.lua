@@ -1,4 +1,6 @@
-return
+return {
+
+}
     -- Available Themes
     -- 16color
     -- ayu_dark | ayu_light | ayu_mirage
@@ -25,13 +27,13 @@ return
     -- solarized_dark | solarized_light
     -- Tomorrow
     -- wombat
-    {
-        "nvim-lualine/lualine.nvim",
-        config = function()
-            require("lualine").setup({
-                options = {
-                    theme = "solarized_dark"
-                }
-            })
-        end
-    }
+    -- {
+    --     "nvim-lualine/lualine.nvim",
+    --     config = function()
+    --         require("lualine").setup({
+    --             options = {
+    --                 theme = "iceberg_dark"
+    --             }
+    --         })
+    --     end
+    -- }

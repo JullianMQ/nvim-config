@@ -23,11 +23,12 @@ vim.cmd("set showcmd")
 vim.cmd("set showmode")
 vim.cmd("set showmatch")
 vim.cmd("set history=1000")
+vim.opt.termguicolors = true
 
 -- Set wildignore patterns // can be left behind
 vim.cmd("set wildmenu")
 vim.cmd("set wildmode=list:longest")
-vim.o.wildignore = '*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx'
+vim.o.wildignore = '*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx,*.git,~/*,*.zip'
 vim.o.colorcolumn = "100"
 
 -- If the current file type is HTML, set indentation to 2 spaces

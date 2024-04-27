@@ -9,7 +9,7 @@ return {
 	},
 	config = function()
 		-- NEOTREE KEYMAPS
-		vim.keymap.set("n", "<leader>t", ":Neotree toggle<CR>", { noremap = true, silent = true })
+		vim.keymap.set("n", "<leader>t", ":Neotree toggle position=right<CR>", { noremap = true, silent = true })
 
 	end,
 }
