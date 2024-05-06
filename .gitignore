@@ -4,6 +4,7 @@
 *.docx
 *.doc
 *.out
+~/.vim/backup/*
 ~/*
 .vim/*
 backup/*
