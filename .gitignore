@@ -1,1 +1,10 @@
-*.zip,*.xlsx,*.xml,*.docx,*.doc,*.out
+*.zip
+*.xlsx
+*.xml
+*.docx
+*.doc
+*.out
+~/.vim/backup/*
+~/*
+.vim/*
+backup/*

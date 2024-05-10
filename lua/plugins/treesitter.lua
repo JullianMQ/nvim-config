@@ -6,7 +6,7 @@ return {
         config.setup({
             autotag = true,
             auto_install = true,
-            ensure_installed = {'lua', 'python', 'java', 'php', 'html', 'css', 'javascript', 'typescript'},
+            ensure_installed = {'lua', 'python', 'java', 'php', 'html', 'css', 'javascript', 'typescript', 'norg'},
             highlight = {enable = true},
             indent = {enable = true},
         })

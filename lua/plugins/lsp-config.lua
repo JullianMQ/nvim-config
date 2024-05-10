@@ -13,7 +13,6 @@ return {
 				auto_install = true,
 				ensure_installed = {
 					"lua_ls",
-					"cssls",
 					"unocss",
 					"svelte",
 					"jdtls",
@@ -36,12 +35,9 @@ return {
             -- TODO: MAKE SURE TO UPDATE LANGUAGES TABLE WITH THE INSTALLED LSP
 			local languages = {
 				"lua_ls",
-				"cssls",
-				"unocss",
 				"eslint",
 				"svelte",
 				"jdtls",
-                "intelephense",
 				"html",
 				"phpactor",
 				"vtsls",

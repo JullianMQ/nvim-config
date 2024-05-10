@@ -1,4 +1,5 @@
 return {
+    -- Catppuccin
 	{
 		"catppuccin/nvim",
 		lazy = false,
@@ -6,39 +7,45 @@ return {
 		priority = 1000,
 		config = function()
 			vim.o.background = "dark" -- set this to dark or light
-			vim.cmd.colorscheme("rose-pine-moon")
+			vim.cmd.colorscheme("mellow")
 		end,
 	},
+    -- Dracula
 	{
 		"Mofiqul/dracula.nvim",
 		name = "dracula",
 		lazy = false,
 		priority = 1000,
 	},
+    -- Kanagawa
 	{
 		"rebelot/kanagawa.nvim",
 		name = "kanagawa",
 		lazy = false,
 		priority = 1000,
 	},
+    -- Moonfly
 	{
 		"bluz71/vim-moonfly-colors",
 		name = "moonfly",
 		lazy = false,
 		priority = 1000,
 	},
+    -- Nightfly
 	{
 		"bluz71/vim-nightfly-colors",
 		name = "nightfly",
 		lazy = false,
 		priority = 1000,
 	},
+    -- Nordic
 	{
 		"AlexvZyl/nordic.nvim",
 		name = "nordic",
 		lazy = false,
 		priority = 1000,
 	},
+    -- Newpaper
 	{
 		"yorik1984/newpaper.nvim",
 		name = "newpaper",
@@ -50,10 +57,25 @@ return {
 		--     })
 		-- end
 	},
+    -- Rose pine
 	{
 		"rose-pine/neovim",
 		name = "rose-pine",
 		lazy = false,
 		priority = 1000,
 	},
+    -- OldWorld
+    {
+        "dgox16/oldworld.nvim",
+        name = "oldworld",
+        lazy = false,
+        priority = 1000,
+    },
+    -- Mellow
+    {
+        "mellow-theme/mellow.nvim",
+        name = "mellow",
+        lazy = false,
+        priority = 1000,
+    }
 }
