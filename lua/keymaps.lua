@@ -4,7 +4,7 @@ local keymap = vim.keymap
 keymap.set("n", "<leader>w", ":w<CR>", { noremap = true, silent = true })
 
 -- paste without yanking the overwritten text
-keymap.set("x", "<leader>p", "\"_dP", {noremap = true, silent = true})
+keymap.set("x", "<leader>p", '"_dP', { noremap = true, silent = true })
 
 -- Go back to last cursor position
 keymap.set("n", "<leader>\\", "``", { noremap = true, silent = true })
@@ -125,6 +125,8 @@ keymap.set("n", "<c-h>", "<c-w>h", { noremap = true, silent = true })
 keymap.set("n", "<c-l>", "<c-w>l", { noremap = true, silent = true })
 keymap.set("n", "<leader>h", ":bn<CR>", { noremap = true, silent = true })
 keymap.set("n", "<leader>l", ":bp<CR>", { noremap = true, silent = true })
+keymap.set("n", "<leader>vs", ":vsplit<CR>", { noremap = true, silent = true, desc="Vertical split"})
+keymap.set("n", "<leader>ss", ":split<CR>", { noremap = true, silent = true, desc="Horizontal split"})
 
 -- Resize split windows
 keymap.set("n", "<c-up>", "<c-w>+", { noremap = true, silent = true })
