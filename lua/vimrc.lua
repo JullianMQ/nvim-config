@@ -43,3 +43,6 @@ if vim.fn.has("nvim-0.5") then
   vim.o.undofile = true
   vim.o.undoreload = 10000
 end
+
+-- Neorg setup
+vim.opt.conceallevel=3

@@ -13,9 +13,13 @@ Colorschemes:
 - Catppuccin
 - Dracula
 - Kanagawa
+- Moonfly
+- Nightfly
+- Nordic
 - newpaper
-- habamax
-- nordic
+- Rose pine
+- Oldworld
+- Mellow
 
 LSP Configs: 
 
