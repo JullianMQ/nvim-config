@@ -5,10 +5,10 @@ return {
 		lazy = false,
 		name = "catpuccin",
 		priority = 1000,
-		config = function()
-			vim.o.background = "dark" -- set this to dark or light
-			vim.cmd.colorscheme("mellow")
-		end,
+        config = function()
+            vim.o.background = "dark" -- set this to dark or light
+            vim.cmd.colorscheme("mellow") -- set the permanent colorscheme here
+        end,
 	},
     -- Dracula
 	{
@@ -77,5 +77,10 @@ return {
         name = "mellow",
         lazy = false,
         priority = 1000,
+    },
+    {
+        "xiyaowong/transparent.nvim",
+        lazy = false,
+        priority = 1000
     }
 }

@@ -1,5 +1,19 @@
 local keymap = vim.keymap
 
+-- Got this from dycw/dotfiles
+-- global marks
+-- Not working yet
+-- local prefixes = "m'"
+-- local letters = "abcdefghijklmnopqrstuvwxyz"
+-- for i = 1, #prefixes do
+--     local prefix = prefixes:sub(i, i)
+--     for j = 1, #letters do
+--         local lower_letter = letters:sub(j, j)
+--         local upper_letter = string.upper(lower_letter)
+--         keymap.set({ "n", "v" }, prefix .. lower_letter, prefix .. upper_letter, "Mark " .. upper_letter)
+--     end
+-- end
+
 -- Keymaps save file
 keymap.set("n", "<leader>w", ":w<CR>", { noremap = true, silent = true })
 
@@ -8,6 +22,11 @@ keymap.set("x", "<leader>p", "\"_dP", {noremap = true, silent = true})
 
 -- Go back to last cursor position
 keymap.set("n", "<leader>\\", "``", { noremap = true, silent = true })
+
+-- Deleting buffers
+keymap.set("n", "<leader>bd", ":bd<CR>", { noremap = true, silent = true })
+keymap.set("n", "<leader>%bd", ":%bd<CR>", { noremap = true, silent = true })
+keymap.set("n", "<leader>bde", ":%bd|e #|bd #<CR>", { noremap = true, silent = true })
 
 -- Auto complete pairs
 -- keymap.set("i", "(", "()<ESC>i", { noremap = true, silent = true })
@@ -143,12 +162,12 @@ vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, {})
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next, {})
 
 -- Git Stuff
-vim.keymap.set("n", "gpu", ":Git push<CR>", {})
-vim.keymap.set("n", "gpl", ":Git pull<CR>", {})
-vim.keymap.set("n", "gcm", ":Git commit", {})
-vim.keymap.set("n", "gaf", ":Git add", {})
-vim.keymap.set("n", "gdf", ":Git diff", {})
-vim.keymap.set("n", "gdt", ":Git difftool", {})
+vim.keymap.set("n", "gpu", ":Git push<CR>", {desc="Git push"})
+vim.keymap.set("n", "gpl", ":Git pull<CR>", {desc="Git pull"})
+vim.keymap.set("n", "gcm", ":Git commit", {desc="Git commit"})
+vim.keymap.set("n", "gaf", ":Git add", {desc="Git add"})
+vim.keymap.set("n", "gdf", ":Git diff", {desc="Git diff"})
+vim.keymap.set("n", "gdt", ":Git difftool", {desc="Git difftool"})
 
 -- UndoTree
 vim.keymap.set("n", "gu", ":UndotreeToggle<CR>", {})
