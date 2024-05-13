@@ -16,24 +16,24 @@ local keymap = vim.keymap
 
 -- Keymaps save file
 keymap.set("n", "<leader>w", ":w<CR>", { noremap = true, silent = true })
-
--- paste without yanking the overwritten text
-keymap.set("x", "<leader>p", '"_dP', { noremap = true, silent = true })
+-- Keymaps save folds
+keymap.set("n", "<leader>sf", ":mkview<CR>", { noremap = true, silent = true, desc="Save folds" })
+keymap.set("n", "<leader>lf", ":loadview<CR>", { noremap = true, silent = true, desc="Load folds" })
 
 -- Go back to last cursor position
 keymap.set("n", "<leader>\\", "``", { noremap = true, silent = true })
 
--- Deleting buffers
-keymap.set("n", "<leader>bd", ":bd<CR>", { noremap = true, silent = true })
-keymap.set("n", "<leader>%bd", ":%bd<CR>", { noremap = true, silent = true })
-keymap.set("n", "<leader>bde", ":%bd|e #|bd #<CR>", { noremap = true, silent = true })
+-- Buffer deletion, added the bp bar for it not to affect the window splits
+keymap.set("n", "<leader>bds", ":bp|bd #<CR>", { noremap = true, silent = true, desc="Buffer delete safe" })
+-- buffer delete safe
+keymap.set("n", "<leader>bdf", ":bp|bd! #<CR>", { noremap = true, silent = true, desc="Buffer delete force" })
+-- buffer delete force
+keymap.set("n", "<leader>bda", ":bp|%bd<CR>", { noremap = true, silent = true, desc="Buffer delete all" })
+-- delete all buffers
+keymap.set("n", "<leader>bde", ":bp|%bd|e #|bd #<CR>", { noremap = true, silent = true, desc="Buffer delete all except current" })
+-- delete all buffers except current
 
--- Auto complete pairs
--- keymap.set("i", "(", "()<ESC>i", { noremap = true, silent = true })
--- keymap.set("i", "{", "{}<ESC>i", { noremap = true, silent = true })
--- keymap.set("i", "[", "[]<ESC>i", { noremap = true, silent = true })
--- keymap.set("i", '"', '""<ESC>i', { noremap = true, silent = true })
--- keymap.set("i", "'", "''<ESC>i", { noremap = true, silent = true })
+-- Fast tags for
 keymap.set("i", "<?p", "<?php?><ESC>hi", { noremap = true, silent = true })
 keymap.set("i", "<?=", "<?=?><ESC>hi", { noremap = true, silent = true })
 
@@ -131,11 +131,14 @@ keymap.set("n", "2O", "O<ESC>O", { noremap = true, silent = true })
 keymap.set("n", "n", "nzz", { noremap = true, silent = true })
 keymap.set("n", "N", "Nzz", { noremap = true, silent = true })
 
--- Yank from cursor to the end of line without newline
+-- Yank to system clipboard
 keymap.set("n", "<leader>y", '"+y', { noremap = true, silent = true })
 keymap.set("v", "<leader>y", '"+y', { noremap = true, silent = true })
 keymap.set("n", "P", '"+p', { noremap = true, silent = true })
 keymap.set("v", "P", '"+p', { noremap = true, silent = true })
+
+-- paste without yanking the overwritten text
+keymap.set("x", "<leader>p", '"_dP', { noremap = true, silent = true })
 
 -- Navigate split view better
 keymap.set("n", "<c-j>", "<c-w>j", { noremap = true, silent = true })
@@ -154,8 +157,8 @@ keymap.set("n", "<c-left>", "<c-w>>", { noremap = true, silent = true })
 keymap.set("n", "<c-right>", "<c-w><", { noremap = true, silent = true })
 
 -- Buffers and Terminal Mode
-keymap.set("n", "<C-\\>", ":bd<CR>", { noremap = true, silent = true })
 keymap.set("t", "<C-h>", "<C-\\><C-n>", { noremap = true, silent = true })
+-- Get out of terminal insert mode
 
 -- LSP
 vim.keymap.set("n", "[o", vim.diagnostic.open_float, {})
@@ -163,13 +166,13 @@ vim.keymap.set("n", "]o", vim.diagnostic.open_float, {})
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, {})
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next, {})
 
--- Git Stuff
-vim.keymap.set("n", "gpu", ":Git push<CR>", {desc="Git push"})
-vim.keymap.set("n", "gpl", ":Git pull<CR>", {desc="Git pull"})
-vim.keymap.set("n", "gcm", ":Git commit", {desc="Git commit"})
-vim.keymap.set("n", "gaf", ":Git add", {desc="Git add"})
-vim.keymap.set("n", "gdf", ":Git diff", {desc="Git diff"})
-vim.keymap.set("n", "gdt", ":Git difftool", {desc="Git difftool"})
+-- Git Fugitive Stuff
+vim.keymap.set("n", "gpu", ":Git push ", {desc="Git push"})
+vim.keymap.set("n", "gpl", ":Git pull ", {desc="Git pull"})
+vim.keymap.set("n", "gcm", ":Git commit -m \"\"", {desc="Git commit"})
+vim.keymap.set("n", "gaf", ":Git add ", {desc="Git add"})
+vim.keymap.set("n", "gdf", ":Git diff ", {desc="Git diff"})
+vim.keymap.set("n", "gdv", ":Gvdiffsplit!<CR>", {desc="Git diff vertical split three way"})
 
 -- UndoTree
 vim.keymap.set("n", "gu", ":UndotreeToggle<CR>", {})

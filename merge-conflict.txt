@@ -1,7 +1,0 @@
-- [] Something here
-- [] Something there
-- [] Something here
-- [] Something there
-Something new here
-Adding something here
-Merge conflict right here
