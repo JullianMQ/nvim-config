@@ -16,11 +16,11 @@ return {
 			require("luasnip.loaders.from_vscode").lazy_load()
 			cmp.setup({
                 -- AutoComplete to follow as we type
-                view = {
-                    entries = {
-                        follow_cursor = true
-                    }
-                },
+                -- view = {
+                --     entries = {
+                --         follow_cursor = true
+                --     }
+                -- },
 				snippet = {
 					-- REQUIRED - you must specify a snippet engine
 					expand = function(args)

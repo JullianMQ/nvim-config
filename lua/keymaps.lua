@@ -151,10 +151,10 @@ keymap.set("n", "<leader>vs", ":vsplit<CR>", { noremap = true, silent = true, de
 keymap.set("n", "<leader>ss", ":split<CR>", { noremap = true, silent = true, desc="Horizontal split"})
 
 -- Resize split windows
-keymap.set("n", "<c-up>", "<c-w>+", { noremap = true, silent = true })
-keymap.set("n", "<c-down>", "<c-w>-", { noremap = true, silent = true })
-keymap.set("n", "<c-left>", "<c-w>>", { noremap = true, silent = true })
-keymap.set("n", "<c-right>", "<c-w><", { noremap = true, silent = true })
+keymap.set("n", "<c-up>", "<c-w>7+", { noremap = true, silent = true })
+keymap.set("n", "<c-down>", "<c-w>7-", { noremap = true, silent = true })
+keymap.set("n", "<c-left>", "<c-w>7>", { noremap = true, silent = true })
+keymap.set("n", "<c-right>", "<c-w>7<", { noremap = true, silent = true })
 
 -- Buffers and Terminal Mode
 keymap.set("t", "<C-h>", "<C-\\><C-n>", { noremap = true, silent = true })
@@ -165,6 +165,11 @@ vim.keymap.set("n", "[o", vim.diagnostic.open_float, {})
 vim.keymap.set("n", "]o", vim.diagnostic.open_float, {})
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, {})
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next, {})
+vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
+vim.keymap.set("n", "gr", vim.lsp.buf.references, {})
+vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
+vim.keymap.set("n", "gf", vim.lsp.buf.declaration, {})
+vim.keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, {})
 
 -- Git Fugitive Stuff
 vim.keymap.set("n", "gpu", ":Git push ", {desc="Git push"})
@@ -175,4 +180,10 @@ vim.keymap.set("n", "gdf", ":Git diff ", {desc="Git diff"})
 vim.keymap.set("n", "gdv", ":Gvdiffsplit!<CR>", {desc="Git diff vertical split three way"})
 
 -- UndoTree
-vim.keymap.set("n", "gu", ":UndotreeToggle<CR>", {})
+keymap.set("n", "gu", ":UndotreeToggle<CR>", {})
+
+-- Vim Tmux Keybinds
+keymap.set("n", "<C-h>", "<cmd> TmuxNavigateLeft<CR>", {desc="window left"})
+keymap.set("n", "<C-l>", "<cmd> TmuxNavigateRight<CR>", {desc="window right"})
+keymap.set("n", "<C-j>", "<cmd> TmuxNavigateDown<CR>", {desc="window down"})
+keymap.set("n", "<C-k>", "<cmd> TmuxNavigateUp<CR>", {desc="window up"})

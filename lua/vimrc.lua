@@ -24,6 +24,7 @@ vim.cmd("set showmode")
 vim.cmd("set showmatch")
 vim.cmd("set history=1000")
 vim.opt.termguicolors = true
+vim.opt.inccommand = "split"
 
 -- Set wildignore patterns // can be left behind
 vim.cmd("set wildmenu")
