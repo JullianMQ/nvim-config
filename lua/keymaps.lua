@@ -1,5 +1,18 @@
 local keymap = vim.keymap
 
+-- Overwrite default motions
+keymap.set("x", "<leader>p", "\"_dP", { noremap = true, silent = true, desc = "Paste without yank" })
+keymap.set("n", "c", "\"_c", { noremap = true, silent = true, desc = "Change without yank" })
+keymap.set("n", "C", "\"_C", { noremap = true, silent = true, desc = "Change without yank" })
+keymap.set("n", "s", "\"_s", { noremap = true, silent = true, desc = "Substitute without yank" })
+keymap.set("n", "S", "\"_S", { noremap = true, silent = true, desc = "Substitute without yank" })
+
+-- Yank to system clipboard
+keymap.set("n", "<leader>y", '"+y', { noremap = true, silent = true, desc = "Yank to clipboard" })
+keymap.set("v", "<leader>y", '"+y', { noremap = true, silent = true, desc = "Yank to clipboard" })
+keymap.set("n", "<leader>p", '"+p', { noremap = true, silent = true, desc = "Paste from clipboard" })
+keymap.set("v", "<leader>p", '"+p', { noremap = true, silent = true, desc = "Paste from clipboard" })
+
 -- Got this from dycw/dotfiles
 -- global marks
 -- Not working yet
@@ -15,25 +28,30 @@ local keymap = vim.keymap
 -- end
 
 -- Keymaps save file
-keymap.set("n", "<leader>w", ":w<CR>", { noremap = true, silent = true })
+
+-- Save file
+keymap.set("n", "<leader>w", ":w<CR>", { noremap = true, silent = true, desc = "Save file" })
+
 -- Keymaps save folds
-keymap.set("n", "<leader>sf", ":mkview<CR>", { noremap = true, silent = true, desc="Save folds" })
-keymap.set("n", "<leader>lf", ":loadview<CR>", { noremap = true, silent = true, desc="Load folds" })
+keymap.set("n", "<leader>sf", ":mkview<CR>", { noremap = true, silent = true, desc = "Save folds" })
+keymap.set("n", "<leader>lf", ":loadview<CR>", { noremap = true, silent = true, desc = "Load folds" })
 
 -- Go back to last cursor position
-keymap.set("n", "<leader>\\", "``", { noremap = true, silent = true })
+keymap.set("n", "<leader>\\", "``", { noremap = true, silent = true, desc = "Back to last mark" })
 
 -- Buffer deletion, added the bp bar for it not to affect the window splits
-keymap.set("n", "<leader>bds", ":bp|bd #<CR>", { noremap = true, silent = true, desc="Buffer delete safe" })
+keymap.set("n", "<leader>bds", ":bp|bd #<CR>", { noremap = true, silent = true, desc = "Buffer delete safe" })
 -- buffer delete safe
-keymap.set("n", "<leader>bdf", ":bp|bd! #<CR>", { noremap = true, silent = true, desc="Buffer delete force" })
+keymap.set("n", "<leader>bdf", ":bp|bd! #<CR>", { noremap = true, silent = true, desc = "Buffer delete force" })
 -- buffer delete force
-keymap.set("n", "<leader>bda", ":bp|%bd<CR>", { noremap = true, silent = true, desc="Buffer delete all" })
+keymap.set("n", "<leader>bda", ":bp|%bd<CR>", { noremap = true, silent = true, desc = "Buffer delete all" })
 -- delete all buffers
-keymap.set("n", "<leader>bde", ":bp|%bd|e #|bd #<CR>", { noremap = true, silent = true, desc="Buffer delete all except current" })
+-- keymap.set("n", "<leader>bde", ":bp|%bd|e #|bd #<CR>", { noremap = true, silent = true, desc="Buffer delete all except current" })
+keymap.set("n", "<leader>bde", ":%bd|e #|bd #<CR>",
+    { noremap = true, silent = true, desc = "Buffer delete all except current" })
 -- delete all buffers except current
 
--- Fast tags for
+-- Fast tags for php
 keymap.set("i", "<?p", "<?php?><ESC>hi", { noremap = true, silent = true })
 keymap.set("i", "<?=", "<?=?><ESC>hi", { noremap = true, silent = true })
 
@@ -116,7 +134,6 @@ keymap.set("i", "<?=", "<?=?><ESC>hi", { noremap = true, silent = true })
 -- keymap.set("i", "<footer#", '<footer id=""></footer><ESC>cit', { noremap = true, silent = true })
 
 -- Escape insert mode
-keymap.set("i", "qq", "<ESC>", { noremap = true, silent = true })
 keymap.set("i", "jj", "<ESC>", { noremap = true, silent = true })
 keymap.set("i", "jk", "<ESC>", { noremap = true, silent = true })
 
@@ -131,24 +148,18 @@ keymap.set("n", "2O", "O<ESC>O", { noremap = true, silent = true })
 keymap.set("n", "n", "nzz", { noremap = true, silent = true })
 keymap.set("n", "N", "Nzz", { noremap = true, silent = true })
 
--- Yank to system clipboard
-keymap.set("n", "<leader>y", '"+y', { noremap = true, silent = true })
-keymap.set("v", "<leader>y", '"+y', { noremap = true, silent = true })
-keymap.set("n", "P", '"+p', { noremap = true, silent = true })
-keymap.set("v", "P", '"+p', { noremap = true, silent = true })
-
--- paste without yanking the overwritten text
-keymap.set("x", "<leader>p", '"_dP', { noremap = true, silent = true })
 
 -- Navigate split view better
 keymap.set("n", "<c-j>", "<c-w>j", { noremap = true, silent = true })
 keymap.set("n", "<c-k>", "<c-w>k", { noremap = true, silent = true })
 keymap.set("n", "<c-h>", "<c-w>h", { noremap = true, silent = true })
 keymap.set("n", "<c-l>", "<c-w>l", { noremap = true, silent = true })
-keymap.set("n", "<leader>h", ":bn<CR>", { noremap = true, silent = true })
-keymap.set("n", "<leader>l", ":bp<CR>", { noremap = true, silent = true })
-keymap.set("n", "<leader>vs", ":vsplit<CR>", { noremap = true, silent = true, desc="Vertical split"})
-keymap.set("n", "<leader>ss", ":split<CR>", { noremap = true, silent = true, desc="Horizontal split"})
+keymap.set("n", "<leader>vs", ":vsplit<CR>", { noremap = true, silent = true, desc = "Vertical split" })
+keymap.set("n", "<leader>ss", ":split<CR>", { noremap = true, silent = true, desc = "Horizontal split" })
+
+-- Navigate buffers
+keymap.set("n", "<leader>h", ":bn<CR>", { noremap = true, silent = true, desc = "Go to next buffer" })
+keymap.set("n", "<leader>l", ":bp<CR>", { noremap = true, silent = true, desc = "Go to previous buffer" })
 
 -- Resize split windows
 keymap.set("n", "<c-up>", "<c-w>7+", { noremap = true, silent = true })
@@ -157,33 +168,33 @@ keymap.set("n", "<c-left>", "<c-w>7>", { noremap = true, silent = true })
 keymap.set("n", "<c-right>", "<c-w>7<", { noremap = true, silent = true })
 
 -- Buffers and Terminal Mode
-keymap.set("t", "<C-h>", "<C-\\><C-n>", { noremap = true, silent = true })
+keymap.set("t", "<C-h>", "<C-\\><C-n>", { noremap = true, silent = true, desc = "Exit terminal insert mode" })
 -- Get out of terminal insert mode
 
 -- LSP
-vim.keymap.set("n", "[o", vim.diagnostic.open_float, {})
-vim.keymap.set("n", "]o", vim.diagnostic.open_float, {})
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, {})
-vim.keymap.set("n", "]d", vim.diagnostic.goto_next, {})
-vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
-vim.keymap.set("n", "gr", vim.lsp.buf.references, {})
-vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
-vim.keymap.set("n", "gf", vim.lsp.buf.declaration, {})
-vim.keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action, {})
+keymap.set("n", "[o", vim.diagnostic.open_float, { desc = " open floating diagnostic" })
+keymap.set("n", "]o", vim.diagnostic.open_float, { desc = " open floating diagnostic" })
+keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = " go to previous diagnostic" })
+keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = " go to next diagnostic" })
+keymap.set("n", "gd", ":vs<CR><C-w>l<C-]>", { desc = "open documentation on right split" })
+keymap.set("n", "<C-]>", ":vs<CR><C-w>l<C-]>", { desc = "open documentation on right split" })
 
 -- Git Fugitive Stuff
-vim.keymap.set("n", "gpu", ":Git push ", {desc="Git push"})
-vim.keymap.set("n", "gpl", ":Git pull ", {desc="Git pull"})
-vim.keymap.set("n", "gcm", ":Git commit -m \"\"", {desc="Git commit"})
-vim.keymap.set("n", "gaf", ":Git add ", {desc="Git add"})
-vim.keymap.set("n", "gdf", ":Git diff ", {desc="Git diff"})
-vim.keymap.set("n", "gdv", ":Gvdiffsplit!<CR>", {desc="Git diff vertical split three way"})
+vim.keymap.set("n", "gpu", ":Git push ", { desc = "Git push" })
+vim.keymap.set("n", "gpl", ":Git pull ", { desc = "Git pull" })
+
+vim.keymap.set("n", "gcm", ":Git commit -m \"\"", { desc = "Git commi t" })
+vim.keymap.set("n", "gaf", ":Git add ", { desc = " Git add" })
+vim.keymap.set("n", "gdf", ":Git diff ", { desc = " Git diff" })
+vim.keymap.set("n", "gdv", ":Gvdiffsplit!<CR>", { desc = " Git diff vertical split three way" })
+
+
 
 -- UndoTree
-keymap.set("n", "gu", ":UndotreeToggle<CR>", {})
+keymap.set("n", "gu", ":UndotreeToggle<CR>", { desc = "show undotree" })
 
 -- Vim Tmux Keybinds
-keymap.set("n", "<C-h>", "<cmd> TmuxNavigateLeft<CR>", {desc="window left"})
-keymap.set("n", "<C-l>", "<cmd> TmuxNavigateRight<CR>", {desc="window right"})
-keymap.set("n", "<C-j>", "<cmd> TmuxNavigateDown<CR>", {desc="window down"})
-keymap.set("n", "<C-k>", "<cmd> TmuxNavigateUp<CR>", {desc="window up"})
+keymap.set("n", "<C-h>", "<cmd> TmuxNavigateLeft<CR>", { desc = "window left" })
+keymap.set("n", "<C-l>", "<cmd> TmuxNavigateRight<CR>", { desc = "window right" })
+keymap.set("n", "<C-j>", "<cmd> TmuxNavigateDown<CR>", { desc = "window down" })
+keymap.set("n", "<C-k>", "<cmd> TmuxNavigateUp<CR>", { desc = "window up" })

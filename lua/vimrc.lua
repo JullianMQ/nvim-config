@@ -47,3 +47,28 @@ end
 
 -- Neorg setup
 vim.opt.conceallevel=3
+
+-- Highlight yank
+vim.api.nvim_exec([[
+  augroup YankHighlight
+    autocmd!
+    autocmd TextYankPost * silent! lua vim.highlight.on_yank()
+  augroup end
+]], false)
+
+-- Annoying inline diagnostics
+    vim.diagnostic.config({
+        virtual_text = false,
+        signs = {
+            text = {
+                [vim.diagnostic.severity.ERROR] = '',
+                [vim.diagnostic.severity.WARN] = '',
+            },
+            linehl = {
+                [vim.diagnostic.severity.ERROR] = 'ErrorMsg',
+            },
+            numhl = {
+                [vim.diagnostic.severity.WARN] = 'WarningMsg',
+            },
+        },
+    })

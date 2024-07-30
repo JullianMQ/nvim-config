@@ -1,6 +1,6 @@
 return {
     "stevearc/conform.nvim",
-    config = function ()
+    config = function()
         local conform = require("conform")
 
         conform.setup({
@@ -8,10 +8,8 @@ return {
                 lua = { "stylua" },
                 python = { "black", "ruff" },
                 ["html, css, javascript, typescript"] = { "prettier", "prettierd" },
-                -- css = { "prettier", "prettierd" },
-                -- javascript = { "prettier", "prettierd" },
-                -- typescript = { "prettier", "prettierd" },
-                php = { "php-cs-fixer", "pretty-php" },
+                -- php = { "php-cs-fixer", "pretty-php" },
+                php = { "pretty-php" },
             },
         })
     end,

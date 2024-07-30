@@ -14,4 +14,9 @@ return {
 		name = "fugitive_vim",
 		priority = 100,
 	},
+	{
+		"tpope/vim-obsession",
+		name = "session_vim",
+		priority = 100,
+	},
 }

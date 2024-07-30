@@ -1,5 +1,5 @@
 return {
-	"ThePrimeagen/harpoon",
+	"The/harpoon",
 	branch = "harpoon2",
 	dependencies = { "nvim-lua/plenary.nvim" },
 	config = function()
@@ -12,18 +12,17 @@ return {
 			harpoon.ui:toggle_quick_menu(harpoon:list())
 		end)
 
-		vim.keymap.set("n", "<c-b>", function()
+		vim.keymap.set("n", "<C-b>", function()
 			harpoon:list():select(1)
 		end)
-		vim.keymap.set("n", "<c-t>", function()
+		vim.keymap.set("n", "<C-t>", function()
 			harpoon:list():select(2)
 		end)
-		vim.keymap.set("n", "<c-n>", function()
+		vim.keymap.set("n", "<C-n>", function()
 			harpoon:list():select(3)
 		end)
-		vim.keymap.set("n", "<c-s>", function()
+		vim.keymap.set("n", "<C-s>", function()
 			harpoon:list():select(4)
 		end)
-
 	end,
 }

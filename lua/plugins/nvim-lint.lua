@@ -8,7 +8,7 @@ return {
         local lint = require("lint")
 
         lint.linters_by_ft = {
-            ["javascript, typescript, javascriptreact, typescriptreact"] = {"eslint_d"},
+            ["javascript, typescript, javascriptreact, typescriptreact"] = {"eslint_d", "biome"},
             php = { "phpcs" },
             python = { "ruff" },
             css = { "stylelint" },

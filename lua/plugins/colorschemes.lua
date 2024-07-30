@@ -7,7 +7,7 @@ return {
 		priority = 1000,
 		config = function()
 			vim.o.background = "dark" -- set this to dark or light
-			vim.cmd.colorscheme("nordic")
+			vim.cmd.colorscheme("retrobox")
 		end,
 	},
     -- Dracula
