@@ -4,29 +4,20 @@ return {
         event = "VeryLazy",
         config = function()
             local wk = require("which-key")
-            wk.register({
-                ["<leader>f"] = {
-                    f = { "Find File" },
-                    r = { "Open Recent File" },
-                    g = { "Grep File" },
-                    b = { "Grep Buffer" },
-                    h = { "Help" },
-                    c = { "Format Code" },
-                },
-                ["<leader>"] = {
-                    a = { "Add to Harpoon" },
-                    e = { "Show Harpoon Menu" },
-                },
-                ["<leader>c"] = {
-                    a = { "Code Actions" },
-                },
-                ["V"] = {
-                    S = { "Surround b: (), B: {}, >: <>, <:Add args:>" },
-                },
-                ["c"] = {
-                    s = { "Change inner surround, new surround" },
-                    S = { "Change with space surround, new surround" },
-                },
+            wk.add({
+
+                { "<leader>a",  desc = "Add to Harpoon" },
+                { "<leader>ca", desc = "Code Actions" },
+                { "<leader>e",  desc = "Show Harpoon Menu" },
+                { "<leader>fb", desc = "Grep Buffer" },
+                { "<leader>fc", desc = "Format Code" },
+                { "<leader>ff", desc = "Find File" },
+                { "<leader>fg", desc = "Grep File" },
+                { "<leader>fh", desc = "Help" },
+                { "<leader>fr", desc = "Open Recent File" },
+                { "VS",         desc = "Surround b: (), B: {}, >: <>, <:Add args:>" },
+                { "cS",         desc = "Change with space surround, new surround" },
+                { "cs",         desc = "Change inner surround, new surround" },
             })
             vim.o.timeout = true
             vim.o.timeoutlen = 300

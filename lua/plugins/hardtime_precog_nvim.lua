@@ -1,27 +1,5 @@
 return {
     {
-        "m4xshen/hardtime.nvim",
-        dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
-        opts = {
-            -- Add "oil" to the disabled_filetypes
-            disabled_filetypes = {
-                "qf",
-                "netrw",
-                "neo-tree",
-                "neo-tree filesystem",
-                "Neotree",
-                "NvimTree",
-                "lazy",
-                "mason",
-                "oil",
-                "neorg://toc-1",
-                "neorg://toc*",
-                "norg"
-            },
-            allow_different_key = true,
-        }
-    },
-    {
         "tris203/precognition.nvim",
         event = "VeryLazy",
         config = {
