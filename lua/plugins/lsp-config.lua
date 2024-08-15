@@ -20,7 +20,6 @@ return {
                 "lua_ls",
                 "svelte",
                 "jdtls",
-                "emmet_ls",
                 "emmet_language_server",
                 "tsserver",
                 "cssls",
@@ -36,12 +35,18 @@ return {
             -- LSP Keymaps
             vim.keymap.set("n", "K", vim.lsp.buf.hover,
                 { noremap = true, silent = true, desc = "Hover" })
+
             vim.keymap.set("n", "gr", vim.lsp.buf.references,
                 { noremap = true, silent = true, desc = "Find references" })
+
             vim.keymap.set("n", "gd", vim.lsp.buf.definition,
                 { noremap = true, silent = true, desc = "Find definition" })
+
             vim.keymap.set("n", "gf", vim.lsp.buf.declaration,
                 { noremap = true, silent = true, desc = "Find declaration" })
+
+            vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename,
+                { noremap = true, silent = true, desc = "Variable rename" })
 
             vim.keymap.set("n", "<leader>fc", vim.lsp.buf.format,
                 { noremap = true, silent = true, desc = "Format Code" })
@@ -80,7 +85,6 @@ return {
                     "lua_ls",
                     "svelte",
                     "jdtls",
-                    "emmet_ls",
                     "emmet_language_server",
                     "tsserver",
                     "cssls",
@@ -114,20 +118,20 @@ return {
                 -- end,
                 -- ["phpactor"] = function()
                 --     require("lspconfig").phpactor.setup({
-                        -- "language_server_worse_reflection.inlay_hints.enable": false,
-                        -- "language_server_worse_reflection.inlay_hints.params": true,
-                        -- "language_server_worse_reflection.inlay_hints.types": false,
-                        -- settings = {
-                            -- "language_server_worse_reflection.inlay_hints.enable": false,
-                            -- "language_server_worse_reflection.inlay_hints.params": true,
-                            -- "language_server_worse_reflection.inlay_hints.types": false,
-                            -- hint = {
-                            --     enable = true,
-                            --     params = true,
-                            --     types = true,
-                            -- }
-                        -- },
-                    -- })
+                -- "language_server_worse_reflection.inlay_hints.enable": false,
+                -- "language_server_worse_reflection.inlay_hints.params": true,
+                -- "language_server_worse_reflection.inlay_hints.types": false,
+                -- settings = {
+                -- "language_server_worse_reflection.inlay_hints.enable": false,
+                -- "language_server_worse_reflection.inlay_hints.params": true,
+                -- "language_server_worse_reflection.inlay_hints.types": false,
+                -- hint = {
+                --     enable = true,
+                --     params = true,
+                --     types = true,
+                -- }
+                -- },
+                -- })
                 -- end,
                 ["lua_ls"] = function()
                     require("lspconfig").lua_ls.setup({
@@ -139,6 +143,9 @@ return {
                         }
                     })
                 end,
+                require("lspconfig").emmet_language_server.setup({
+                    filetypes = { "javascript", "php" }
+                }),
                 ["tsserver"] = function()
                     require("lspconfig").tsserver.setup({
                         settings = {

@@ -8,10 +8,9 @@ return {
         local lint = require("lint")
 
         lint.linters_by_ft = {
-            ["javascript, typescript, javascriptreact, typescriptreact"] = {"eslint_d", "biome"},
+            ["javascript, typescript, ejs, embedded_template, javascriptreact, typescriptreact"] = {"eslint_d", "biome"},
             php = { "phpcs" },
             python = { "ruff" },
-            css = { "stylelint" },
             html = { "htmlhint" },
         }
         local lint_augroup = vim.api.nvim_create_augroup("Linter", {clear = true})

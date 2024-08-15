@@ -1,6 +1,10 @@
 {
     "diagnostics.globals": [
         "vim",
-        "mappings"
+        "mappings",
+        "s",
+        "i",
+        "t",
+        "sn"
     ]
 }

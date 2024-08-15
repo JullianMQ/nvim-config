@@ -1,7 +1,11 @@
 local keymap = vim.keymap
 
 -- Overwrite default motions
-keymap.set("x", "<leader>p", "\"_dP", { noremap = true, silent = true, desc = "Paste without yank" })
+keymap.set("v", "p", "\"_dp", { noremap = true, silent = true, desc = "Paste without yank" })
+keymap.set("v", "P", "\"_dP", { noremap = true, silent = true, desc = "Paste without yank" })
+keymap.set("x", "p", "\"_dp", { noremap = true, silent = true, desc = "Paste without yank" })
+keymap.set("x", "P", "\"_dP", { noremap = true, silent = true, desc = "Paste without yank" })
+
 keymap.set("n", "c", "\"_c", { noremap = true, silent = true, desc = "Change without yank" })
 keymap.set("n", "C", "\"_C", { noremap = true, silent = true, desc = "Change without yank" })
 keymap.set("n", "s", "\"_s", { noremap = true, silent = true, desc = "Substitute without yank" })
@@ -51,91 +55,10 @@ keymap.set("n", "<leader>bde", ":%bd|e #|bd #<CR>",
     { noremap = true, silent = true, desc = "Buffer delete all except current" })
 -- delete all buffers except current
 
--- Fast tags for php
-keymap.set("i", "<?p", "<?php?><ESC>hi", { noremap = true, silent = true })
-keymap.set("i", "<?=", "<?=?><ESC>hi", { noremap = true, silent = true })
-
--- Tags for html
--- keymap.set("i", "<link", '<link rel="stylesheet" href=""><ESC>hi', { noremap = true, silent = true })
--- keymap.set("i", "<meta", '<meta name="description" content=""><ESC>hi', { noremap = true, silent = true })
-
--- keymap.set("i", "<h1", "<h1></h1><ESC>cit", { noremap = true, silent = true })
--- keymap.set("i", "<h1.", '<h1 class=""></h1><ESC>cit', { noremap = true, silent = true })
--- keymap.set("i", "<h1#", '<h1 id=""></h1><ESC>cit', { noremap = true, silent = true })
-
--- keymap.set("i", "<h2", "<h2></h2><ESC>cit", { noremap = true, silent = true })
--- keymap.set("i", "<h2.", '<h2 class=""></h2><ESC>cit', { noremap = true, silent = true })
--- keymap.set("i", "<h2#", '<h2 id=""></h2><ESC>cit', { noremap = true, silent = true })
-
--- keymap.set("i", "<h3", "<h3></h3><ESC>cit", { noremap = true, silent = true })
--- keymap.set("i", "<h3.", '<h3 class=""></h3><ESC>cit', { noremap = true, silent = true })
--- keymap.set("i", "<h3#", '<h3 id=""></h3><ESC>cit', { noremap = true, silent = true })
-
--- keymap.set("i", "<h4", "<h4></h4><ESC>cit", { noremap = true, silent = true })
--- keymap.set("i", "<h4.", '<h4 class=""></h4><ESC>cit', { noremap = true, silent = true })
--- keymap.set("i", "<h4#", '<h4 id=""></h4><ESC>cit', { noremap = true, silent = true })
-
--- keymap.set("i", "<h5", "<h5></h5><ESC>cit", { noremap = true, silent = true })
--- keymap.set("i", "<h5.", '<h5 class=""></h5><ESC>cit', { noremap = true, silent = true })
--- keymap.set("i", "<h5#", '<h5 id=""></h5><ESC>cit', { noremap = true, silent = true })
-
--- keymap.set("i", "<h6", "<h6></h6><ESC>cit", { noremap = true, silent = true })
--- keymap.set("i", "<h6.", '<h6 class=""></h6><ESC>cit', { noremap = true, silent = true })
--- keymap.set("i", "<h6#", '<h6 id=""></h6><ESC>cit', { noremap = true, silent = true })
-
--- keymap.set("i", "<div", "<div></div><ESC>cit", { noremap = true, silent = true })
--- keymap.set("i", "<div.", '<div class=""></div><ESC>cit', { noremap = true, silent = true })
--- keymap.set("i", "<div#", '<div id=""></div><ESC>cit', { noremap = true, silent = true })
-
--- keymap.set("i", "<sect", "<section></section><ESC>cit", { noremap = true, silent = true })
--- keymap.set("i", "<sect.", '<section class=""></section><ESC>cit', { noremap = true, silent = true })
--- keymap.set("i", "<sect#", '<section id=""></section><ESC>cit', { noremap = true, silent = true })
-
--- keymap.set("i", "<asi", "<aside></aside><ESC>cit", { noremap = true, silent = true })
--- keymap.set("i", "<asi.", '<aside class=""></aside><ESC>cit', { noremap = true, silent = true })
--- keymap.set("i", "<asi#", '<aside id=""></aside><ESC>cit', { noremap = true, silent = true })
-
--- keymap.set("i", "<atag", '<a href="" alt=""></a><ESC>cit', { noremap = true, silent = true })
--- keymap.set("i", "<ablank", '<a href="" alt="" target="_blank"></a><ESC>cit', { noremap = true, silent = true })
--- keymap.set("i", "<atag.", '<a href="" alt="" class=""></a><ESC>cit', { noremap = true, silent = true })
--- keymap.set("i", "<atag#", '<a href="" alt="" id=""></a><ESC>cit', { noremap = true, silent = true })
-
--- keymap.set("i", "<p", "<p></p><ESC>cit", { noremap = true, silent = true })
--- keymap.set("i", "<p.", '<p class=""></p><ESC>cit', { noremap = true, silent = true })
--- keymap.set("i", "<p#", '<p id=""></p><ESC>cit', { noremap = true, silent = true })
-
--- keymap.set("i", "<formpost", '<form action="" method="post"></form><ESC>cit', { noremap = true, silent = true })
--- keymap.set("i", "<formget", '<form action="" method="get"></form><ESC>cit', { noremap = true, silent = true })
-
--- keymap.set("i", "<butn", "<button></button><ESC>cit", { noremap = true, silent = true })
--- keymap.set("i", "<but.", '<button class=""></button><ESC>cit', { noremap = true, silent = true })
--- keymap.set("i", "<but#", '<button id=""></button><ESC>cit', { noremap = true, silent = true })
-
--- keymap.set("i", "<inp", '<input type="" name=""></input><ESC>cit', { noremap = true, silent = true })
-
--- keymap.set("i", "<nav", "<nav></nav><ESC>cit", { noremap = true, silent = true })
--- keymap.set("i", "<nav.", '<nav class=""></nav><ESC>cit', { noremap = true, silent = true })
--- keymap.set("i", "<nav#", '<nav id=""></nav><ESC>cit', { noremap = true, silent = true })
-
--- keymap.set("i", "<li", "<li></li><ESC>cit", { noremap = true, silent = true })
--- keymap.set("i", "<li.", '<li class=""></li><ESC>cit', { noremap = true, silent = true })
--- keymap.set("i", "<li#", '<li id=""></li><ESC>cit', { noremap = true, silent = true })
-
--- keymap.set("i", "<ul", "<ul></ul><ESC>cit", { noremap = true, silent = true })
--- keymap.set("i", "<ul.", '<ul class=""></ul><ESC>cit', { noremap = true, silent = true })
--- keymap.set("i", "<ul#", '<ul id=""></ul><ESC>cit', { noremap = true, silent = true })
-
--- keymap.set("i", "<ol", "<ol></ol><ESC>cit", { noremap = true, silent = true })
--- keymap.set("i", "<ol.", '<ol class=""></ol><ESC>cit', { noremap = true, silent = true })
--- keymap.set("i", "<ol#", '<ol id=""></ol><ESC>cit', { noremap = true, silent = true })
-
--- keymap.set("i", "<footer", "<footer></footer><ESC>cit", { noremap = true, silent = true })
--- keymap.set("i", "<footer.", '<footer class=""></footer><ESC>cit', { noremap = true, silent = true })
--- keymap.set("i", "<footer#", '<footer id=""></footer><ESC>cit', { noremap = true, silent = true })
-
 -- Escape insert mode
 keymap.set("i", "jj", "<ESC>", { noremap = true, silent = true })
 keymap.set("i", "jk", "<ESC>", { noremap = true, silent = true })
+
 
 -- Escape visual mode
 keymap.set("v", "q", "<ESC>", { noremap = true, silent = true })
@@ -168,7 +91,7 @@ keymap.set("n", "<c-left>", "<c-w>7>", { noremap = true, silent = true })
 keymap.set("n", "<c-right>", "<c-w>7<", { noremap = true, silent = true })
 
 -- Buffers and Terminal Mode
-keymap.set("t", "<C-h>", "<C-\\><C-n>", { noremap = true, silent = true, desc = "Exit terminal insert mode" })
+keymap.set("t", "<C-\\>", "<C-\\><C-n>", { noremap = true, silent = true, desc = "Exit terminal insert mode" })
 -- Get out of terminal insert mode
 
 -- LSP
