@@ -10,12 +10,26 @@ keymap.set("n", "c", "\"_c", { noremap = true, silent = true, desc = "Change wit
 keymap.set("n", "C", "\"_C", { noremap = true, silent = true, desc = "Change without yank" })
 keymap.set("n", "s", "\"_s", { noremap = true, silent = true, desc = "Substitute without yank" })
 keymap.set("n", "S", "\"_S", { noremap = true, silent = true, desc = "Substitute without yank" })
+keymap.set("n", "db", "ldb", { noremap = true, silent = true, desc = "Delete backwards including cursor" })
+keymap.set("n", "yb", "lyb", { noremap = true, silent = true, desc = "Yank backwards including cursor" })
+keymap.set("n", "<C-u>", "<C-u>zz", { noremap = true, silent = true, desc = "Scroll up center" })
+keymap.set("n", "<C-d>", "<C-d>zz", { noremap = true, silent = true, desc = "Scroll down center" })
+keymap.set("n", "<BS>", "^", { noremap = true, silent = true, desc = "First non-blank character" })
+
+-- QOL
+keymap.set("n", "<leader>gl", "g_", { noremap = true, silent = true, desc = "Go to end of line" })
+keymap.set("n", "<leader>sl", "vg_", { noremap = true, silent = true, desc = "Select to end of line" })
+keymap.set("n", "<leader>sa", "ggVG", { noremap = true, silent = true, desc = "Select all" })
+keymap.set("n", "yae", ":% y\"+<CR>:% y<CR>", { noremap = true, silent = true, desc = "Yank all" })
+keymap.set("n", "<leader>Cr", ":!node %<CR>", { noremap = true, silent = true, desc = "Code Run Node" })
 
 -- Yank to system clipboard
 keymap.set("n", "<leader>y", '"+y', { noremap = true, silent = true, desc = "Yank to clipboard" })
 keymap.set("v", "<leader>y", '"+y', { noremap = true, silent = true, desc = "Yank to clipboard" })
-keymap.set("n", "<leader>p", '"+p', { noremap = true, silent = true, desc = "Paste from clipboard" })
-keymap.set("v", "<leader>p", '"+p', { noremap = true, silent = true, desc = "Paste from clipboard" })
+keymap.set("n", "<leader>p", '"+p', { noremap = true, silent = true, desc = "Clipboard paste front" })
+keymap.set("v", "<leader>p", '"+p', { noremap = true, silent = true, desc = "Clipboard paste front" })
+keymap.set("n", "<leader>P", '"+P', { noremap = true, silent = true, desc = "Clipboard paste back" })
+keymap.set("v", "<leader>P", '"+P', { noremap = true, silent = true, desc = "Clipboard paste back" })
 
 -- Got this from dycw/dotfiles
 -- global marks
@@ -31,10 +45,10 @@ keymap.set("v", "<leader>p", '"+p', { noremap = true, silent = true, desc = "Pas
 --     end
 -- end
 
--- Keymaps save file
-
 -- Save file
 keymap.set("n", "<leader>w", ":w<CR>", { noremap = true, silent = true, desc = "Save file" })
+keymap.set("n", "<leader><leader>w", ":wqa<CR>", { noremap = true, silent = true, desc = "Save all file and quit" })
+keymap.set("n", "<leader><leader>q", ":q!<CR>", { noremap = true, silent = true, desc = "Quit without saving" })
 
 -- Keymaps save folds
 keymap.set("n", "<leader>sf", ":mkview<CR>", { noremap = true, silent = true, desc = "Save folds" })
@@ -66,6 +80,8 @@ keymap.set("v", "q", "<ESC>", { noremap = true, silent = true })
 -- Create space and below and go up
 keymap.set("n", "2o", "o<ESC>o", { noremap = true, silent = true })
 keymap.set("n", "2O", "O<ESC>O", { noremap = true, silent = true })
+keymap.set("n", "<leader>o", "o<ESC>", { noremap = true, silent = true })
+keymap.set("n", "<leader><leader>o", "O<ESC>", { noremap = true, silent = true })
 
 -- Center cursor when moving to the next word when searching
 keymap.set("n", "n", "nzz", { noremap = true, silent = true })
@@ -92,6 +108,9 @@ keymap.set("n", "<c-right>", "<c-w>7<", { noremap = true, silent = true })
 
 -- Buffers and Terminal Mode
 keymap.set("t", "<C-\\>", "<C-\\><C-n>", { noremap = true, silent = true, desc = "Exit terminal insert mode" })
+keymap.set("n", "<leader>tv", ":vsp term://bash<CR>", { noremap = true, silent = true, desc = "Vertical terminal" })
+keymap.set("n", "<leader>ts", ":sp term://bash<CR>", { noremap = true, silent = true, desc = "Horizontal terminal" })
+
 -- Get out of terminal insert mode
 
 -- LSP
@@ -106,11 +125,13 @@ keymap.set("n", "<C-]>", ":vs<CR><C-w>l<C-]>", { desc = "open documentation on r
 vim.keymap.set("n", "gpu", ":Git push ", { desc = "Git push" })
 vim.keymap.set("n", "gpl", ":Git pull ", { desc = "Git pull" })
 
-vim.keymap.set("n", "gcm", ":Git commit -m \"\"", { desc = "Git commi t" })
+vim.keymap.set("n", "gcm", ":Git commit -m \"\"", { desc = "Git commit" })
 vim.keymap.set("n", "gaf", ":Git add ", { desc = " Git add" })
 vim.keymap.set("n", "gdf", ":Git diff ", { desc = " Git diff" })
 vim.keymap.set("n", "gdv", ":Gvdiffsplit!<CR>", { desc = " Git diff vertical split three way" })
 
+-- Screenkey
+keymap.set("n", "<leader>tsk", ":Screenkey<CR>", { desc = "[T]oggle [S]creen[K]ey" })
 
 
 -- UndoTree

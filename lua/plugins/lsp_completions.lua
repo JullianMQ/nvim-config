@@ -1,11 +1,15 @@
 return {
     {
         "hrsh7th/cmp-nvim-lsp",
-        event = "VeryLazy",
     },
     {
         "hrsh7th/nvim-cmp",
-        event = "VeryLazy",
+        opts =  {
+            performance = {
+                debounce = 0,
+                throttle = 0,
+            },
+        },
         dependencies = {
             "luckasRanarison/tailwind-tools.nvim",
             'hrsh7th/cmp-path',

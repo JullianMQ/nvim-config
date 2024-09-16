@@ -6,6 +6,7 @@ return {
     config = function()
         require('ultimate-autopair').setup({
             cmap = false,
+            extensions={cond={cond=function(fn) return not fn.in_macro() end}}
         })
     end
 }

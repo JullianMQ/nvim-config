@@ -1,4 +1,48 @@
 return {
+    {
+        "zaldih/themery.nvim",
+        lazy = false,
+        priority = 1000,
+        config = function()
+        require("themery").setup({
+            themes = {
+                "catppuccin-latte",
+                "catppuccin-mocha",
+                "catppuccin-frappe",
+                "catppuccin-macchiato",
+                "catppuccin-macchiato",
+                "carbonfox",
+                "gruvbox-material",
+                "everforest",
+                "dracula",
+                "dracula-soft",
+                "kanagawa-wave",
+                "kanagawa-lotus",
+                "kanagawa-paper",
+                "kanagawa-dragon",
+                "moonfly",
+                "nightfly",
+                "nordic",
+                "nordfox",
+                "rose-pine-dawn",
+                "rose-pine-main",
+                "rose-pine-moon",
+                "flow",
+                "solarized-osaka-day",
+                "solarized-osaka-moon",
+                "solarized-osaka-night",
+                "solarized-osaka-storm",
+                "miramare",
+                "nightfox",
+                "apprentice",
+                "alduin",
+                "spacegray",
+                "monrovia",
+            },
+        })
+        end,
+
+    },
     -- Catppuccin
     {
         "catppuccin/nvim",
@@ -7,7 +51,8 @@ return {
         priority = 1000,
         config = function()
             vim.o.background = "dark" -- set this to dark or light
-            vim.cmd.colorscheme("duskfox")
+            vim.opt.termguicolors = true
+            -- vim.cmd.colorscheme("miramare")
         end,
     },
     -- Dracula
@@ -52,18 +97,6 @@ return {
         lazy = false,
         priority = 1000,
     },
-    -- Newpaper
-    {
-        "yorik1984/newpaper.nvim",
-        name = "newpaper",
-        lazy = false,
-        priority = 1000,
-        -- config = function()
-        --     require("newpaper").setup({
-        --         style = "dark"
-        --     })
-        -- end
-    },
     -- Rose pine
     {
         "rose-pine/neovim",
@@ -101,15 +134,60 @@ return {
         priority = 1000,
         opts = {},
     },
-    -- Miasma
-    {
-        "xero/miasma.nvim",
-        lazy = false,
-        priority = 1000,
-    },
     -- Nightfox
     {
         "EdenEast/nightfox.nvim",
+        lazy = false,
+        priority = 1000,
+    },
+    -- Miramare
+    {
+        "franbach/miramare",
+        name = "miramare",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            vim.g.miramare_enable_italic = 1
+            vim.g.miramare_disable_italic_comment = 1
+        end,
+    },
+    -- Apprentice
+    {
+        "romainl/Apprentice",
+        name = "apprentice",
+        lazy = false,
+        priority = 1000,
+    },
+    -- Alduin
+    {
+        "AlessandroYorba/Alduin",
+        name = "alduin",
+        lazy = false,
+        priority = 1000,
+    },
+    -- Monrovia
+    {
+        "iceisspetrel/Monrovia",
+        name = "monrovia",
+        lazy = false,
+        priority = 1000,
+    },
+    -- Spacegray
+    {
+        "vim-scripts/Spacegray.vim",
+        name = "spacegray",
+        lazy = false,
+        priority = 1000,
+    },
+    {
+        "sainnhe/everforest",
+        name = "everforest",
+        lazy = false,
+        priority = 1000,
+    },
+    {
+        "sainnhe/gruvbox-material",
+        name = "gruvbox-material",
         lazy = false,
         priority = 1000,
     },

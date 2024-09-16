@@ -59,6 +59,9 @@ return {
             vim.keymap.set("n", "<leader>cl", function() vim.lsp.codelens.run() end,
                 { noremap = true, silent = true, desc = "Code lens" })
 
+            vim.keymap.set("n", "<leader>cr", function() vim.lsp.buf.rename() end,
+                { noremap = true, silent = true, desc = "Code Rename" })
+
             -- vim.keymap.set({ "n", "v" }, "<space>ca", vim.lsp.buf.code_action,
             --     { noremap = true, silent = true })
             -- Change to tiny code action

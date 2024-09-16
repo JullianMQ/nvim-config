@@ -1,5 +1,6 @@
 return {
     "svban/YankAssassin.nvim",
+    lazy = false,
     config = function()
         require("YankAssassin").setup {
             auto_normal = true, -- if true, autocmds are used. Whenever y is used in normal mode, the cursor doesn't move to start

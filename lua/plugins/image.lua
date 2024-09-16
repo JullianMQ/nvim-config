@@ -1,6 +1,7 @@
 return {
     {
         "vhyrro/luarocks.nvim",
+        event = "VeryLazy",
         priority = 1001,
         opts = {
             rocks = { "magick" },
@@ -9,6 +10,7 @@ return {
     {
         "3rd/image.nvim",
         dependencies = { "luarocks.nvim" },
+        event = "VeryLazy",
         config = function()
             -- default config
             require("image").setup({

@@ -2,21 +2,21 @@ return {
 	{
 		"tpope/vim-commentary",
 		name = "comment_line",
-		priority = 100,
+        event = "VeryLazy"
 	},
 	{
 		"tpope/vim-surround",
 		name = "surround_line",
-		priority = 100,
+        event = "VeryLazy"
 	},
 	{
 		"tpope/vim-fugitive",
 		name = "fugitive_vim",
-		priority = 100,
+        event = "VeryLazy"
 	},
 	{
 		"tpope/vim-obsession",
 		name = "session_vim",
-		priority = 100,
+        event = "VeryLazy"
 	},
 }

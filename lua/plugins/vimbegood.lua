@@ -1,4 +1,4 @@
 return {
-    "mbbill/undotree",
+    'ThePrimeagen/vim-be-good',
     event = 'VeryLazy'
 }
