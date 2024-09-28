@@ -10,7 +10,8 @@ return
         -- Telescope stuff
         config = function()
             local builtin = require('telescope.builtin')
-            vim.keymap.set('n', '<leader>ff', builtin.find_files, { noremap = true, silent = true })
+            -- vim.keymap.set('n', '<leader>ff', builtin.find_files, { noremap = true, silent = true })
+            vim.keymap.set('n', '<leader>ff', ":Telescope frecency workspace=CWD<CR>", { noremap = true, silent = true })
             vim.keymap.set('n', '<leader>fg', builtin.live_grep, { noremap = true, silent = true })
             vim.keymap.set('n', '<leader>fb', builtin.buffers, { noremap = true, silent = true })
             vim.keymap.set('n', '<leader>fh', builtin.help_tags, { noremap = true, silent = true })
@@ -45,5 +46,11 @@ return
         config = function()
             require("telescope").load_extension("recent_files")
         end
+    },
+    {
+        "nvim-telescope/telescope-frecency.nvim",
+        config = function()
+            require("telescope").load_extension "frecency"
+        end,
     }
 }

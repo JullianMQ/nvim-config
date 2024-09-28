@@ -1,5 +1,4 @@
 return {
-
     {
         'echasnovski/mini.ai', version = '*',
         lazy = true,

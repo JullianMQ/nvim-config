@@ -1,6 +1,4 @@
 return {
-
-}
     -- Available Themes
     -- 16color
     -- ayu_dark | ayu_light | ayu_mirage
@@ -27,13 +25,24 @@ return {
     -- solarized_dark | solarized_light
     -- Tomorrow
     -- wombat
-    -- {
-    --     "nvim-lualine/lualine.nvim",
-    --     config = function()
-    --         require("lualine").setup({
-    --             options = {
-    --                 theme = "iceberg_dark"
-    --             }
-    --         })
-    --     end
-    -- }
+    {
+        "nvim-lualine/lualine.nvim",
+        config = function()
+            require("lualine").setup {
+                options = {
+                    theme = "gruvbox-material",
+                    component_separators = { left = '', right = '' },
+                    section_separators = { left = '', right = '' },
+                },
+                    sections = {
+                        lualine_a = { 'mode' },
+                        lualine_b = { 'branch', 'diff' },
+                        lualine_c = { "require'lsp-status'.status()" },
+                        lualine_x = { 'filename', 'filetype', '' },
+                        lualine_y = { 'progress' },
+                        lualine_z = { 'diagnostics' }
+                    },
+            }
+        end
+    }
+}

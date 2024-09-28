@@ -28,6 +28,7 @@ return {
                 "phpactor",
                 "pyright",
                 "vimls",
+                "gopls",
             }
             for _, lang in ipairs(languages) do
                 lspconfig[lang].setup({ capabilities = capabilities })
@@ -96,6 +97,7 @@ return {
                     "phpactor",
                     "pyright",
                     "vimls",
+                    "gopls",
                 },
             })
             require("mason-lspconfig").setup()

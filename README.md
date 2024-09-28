@@ -23,4 +23,4 @@ Colorschemes:
 
 LSP Configs: 
 
-check out my pure vim config at https://github.com/JullianMQ/myvim-config
+Check out my pure vim config at https://github.com/JullianMQ/myvim-config
