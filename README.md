@@ -1,26 +1,40 @@
-# My NEOVIM config
-Hey this is a wip neovim config with a lot of things still needed to change
-Still trying to understand what the hell I'm doing with the configurations
-But so far it's been a fun journey.
+# kickstart-modular.nvim
 
-Here's the list of the plugins that I have used:
+## Introduction
+This is my own personal neovim configuration. It is a configuration built on top of
+[kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)
+project.
 
-Nice to have:
-- Vim surround - tpope
-- Vim commentary - tpope
+## Added the following plugins:
 
-Colorschemes:
-- Catppuccin
-- Dracula
-- Kanagawa
-- Moonfly
-- Nightfly
-- Nordic
-- newpaper
-- Rose pine
-- Oldworld
-- Mellow
+### Tpope plugins
+- vim-obsession
+- vim-fugitive
 
-LSP Configs: 
+### WebDev plugins
+- tailwind-tools.nvim
+- ts-autotag.nvim
+- diagnostic-window.nvim
+- nvim-highlight-colors
 
-Check out my pure vim config at https://github.com/JullianMQ/myvim-config
+### Movement plugins
+- harpoon.nvim
+- quicker.nvim
+- aerial.nvim
+
+### Diagnostics plugins
+- tiny-code-action.nvim
+- tiny-inline-diagnostics.nvim
+
+### Noice to have
+- noice.nvim
+- timber.nvim
+- flutter-tools.nvim
+- vim-tmux-navigator
+- undotree
+- code-playground.nvim
+- supermaven-nvim
+- mini.splitjoin
+- mini.align
+
+> Also added some snippets
