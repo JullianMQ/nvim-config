@@ -21,7 +21,7 @@ return {
       local wk = require('which-key')
       wk.add ({
         {"<leader>a", desc = 'Harpoon [A]dd'},
-        {"<leader>h", desc = '[H]arpoon Menu'},
+        {"<leader>e", desc = 'Harpoon [E]ntry'},
         {"<leader>b", desc = '[B]uffer +'},
         {"<leader>bd", desc = '[B]uffer [D]elete +'},
         {"<leader>bde", desc = '[B]uffer [D]elete [E]xcept Current'},

@@ -87,6 +87,7 @@ keymap.set('n', 'n', 'nzz', { noremap = true, silent = true })
 keymap.set('n', 'N', 'Nzz', { noremap = true, silent = true })
 
 -- Buffer deletion, added the bp bar for it not to affect the window splits
+keymap.set('n', '<leader>bd', ':bd<CR>', { noremap = true, silent = true, desc = '[B]uffer [D]elete' })
 -- buffer delete window
 keymap.set('n', '<leader>bds', ':bp|bd #<CR>', { noremap = true, silent = true, desc = '[B]uffer [D]elete [S]afe' })
 -- buffer [D]elete safe
