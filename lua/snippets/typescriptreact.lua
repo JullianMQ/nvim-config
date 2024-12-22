@@ -18,11 +18,16 @@ return {
     insert_node(0),
     text_node { '\t', '}' },
   }),
-  snippet('arr', {
+  snippet('arrow', {
     text_node '(',
     insert_node(1),
     text_node { ') => {', '\t' },
     insert_node(0),
     text_node { '\t', '}' },
+  }),
+  snippet('cls', {
+    text_node 'className="',
+    insert_node(1),
+    text_node '"',
   }),
 }
