@@ -1,25 +1,25 @@
 vim.opt.number = true
 vim.opt.relativenumber = true
-vim.opt.mouse = 'a'
+vim.opt.mouse = "a"
 
 vim.opt.wrap = false
 vim.opt.hlsearch = false
 vim.opt.termguicolors = true
-vim.cmd 'set wildmenu'
-vim.cmd 'set wildmode=list:longest'
-vim.o.wildignore = '*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx,*.git,~/*,*.zip'
+vim.cmd("set wildmenu")
+vim.cmd("set wildmode=list:longest")
+vim.o.wildignore = "*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx,*.git,~/*,*.zip"
 vim.g.autoformat = false
 
-vim.g.netrw_bufsettings = 'noma nomod nu nowrap ro nobl'
-vim.api.nvim_create_autocmd('FileType', {
-  pattern = 'netrw',
-  command = 'setlocal number',
+vim.g.netrw_bufsettings = "noma nomod nu nowrap ro nobl"
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "netrw",
+	command = "setlocal number",
 })
 
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
 vim.schedule(function()
-  vim.opt.clipboard = 'unnamedplus'
+	vim.opt.clipboard = "unnamedplus"
 end)
 -- Enable break indent
 vim.opt.breakindent = true
@@ -32,7 +32,7 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 -- Keep signcolumn on by default
-vim.opt.signcolumn = 'no'
+vim.opt.signcolumn = "no"
 
 -- Decrease update time
 vim.opt.updatetime = 250
@@ -49,10 +49,11 @@ vim.opt.splitbelow = true
 --  See `:help 'list'`
 --  and `:help 'listchars'`
 vim.opt.list = true
-vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
+vim.opt.listchars = { tab = " ", trail = "·", nbsp = "␣" }
+-- vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
 -- Preview substitutions live, as you type!
-vim.opt.inccommand = 'split'
+vim.opt.inccommand = "split"
 
 -- Show which line your cursor is on
 vim.opt.cursorline = true
@@ -67,10 +68,10 @@ vim.opt.tabstop = 4
 vim.opt.expandtab = true
 
 -- Column for best practice code length
-vim.o.colorcolumn = '80'
+vim.o.colorcolumn = "80"
 
 -- Set darkmode
-vim.o.background = 'dark'
+vim.o.background = "dark"
 
 -- Neorg setup
 vim.opt.conceallevel = 3
