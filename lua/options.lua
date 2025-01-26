@@ -16,6 +16,11 @@ vim.api.nvim_create_autocmd("FileType", {
 	command = "setlocal number",
 })
 
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = {"md", "txt", "markdown"},
+	command = "set wrap linebreak"
+})
+
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
 vim.schedule(function()
