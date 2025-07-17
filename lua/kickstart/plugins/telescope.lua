@@ -8,9 +8,14 @@
 return {
   { -- Fuzzy Finder (files, lsp, etc)
     'nvim-telescope/telescope.nvim',
+    defaults = {
+      path_display = {
+        filename_first = {
+          reverse_directories = false,
+        },
+      },
+    },
     event = 'VimEnter',
-    tag = '0.1.8',
-    branch = '0.1.x',
     dependencies = {
       'nvim-lua/plenary.nvim',
       { -- If encountering errors, see telescope-fzf-native README for installation instructions
@@ -65,7 +70,11 @@ return {
         defaults = {
           mappings = {
             i = {
-              ['<c-enter>'] = 'to_fuzzy_refine',
+              ['<CR>'] = actions.select_default,
+              ['<C-m>'] = actions.preview_scrolling_left,
+              ['<C-f>'] = actions.preview_scrolling_right,
+              ['<PageUp>'] = actions.preview_scrolling_up,
+              ['<PageDown>'] = actions.preview_scrolling_down,
             },
 
           },
