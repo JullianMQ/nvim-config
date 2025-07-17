@@ -70,11 +70,10 @@ return {
         defaults = {
           mappings = {
             i = {
-              ['<CR>'] = actions.select_default,
-              ['<C-m>'] = actions.preview_scrolling_left,
-              ['<C-f>'] = actions.preview_scrolling_right,
-              ['<PageUp>'] = actions.preview_scrolling_up,
-              ['<PageDown>'] = actions.preview_scrolling_down,
+              ["<C-f>"] = actions.preview_scrolling_left,
+              ["<C-s>"] = actions.preview_scrolling_right,
+              ["<PageUp>"] = actions.preview_scrolling_up,
+              ["<PageDown>"] = actions.preview_scrolling_down,
             },
 
           },
