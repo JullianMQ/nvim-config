@@ -28,7 +28,7 @@ return {
 					{
 						view = "notify",
 						filter = { event = "msg_showmode" },
-					}
+					},
 				},
 				views = {
 					cmdline_popup = {
@@ -67,7 +67,7 @@ return {
 	{
 		"nvim-lualine/lualine.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
-		config = function ()
+		config = function()
 			require("lualine").setup({
 				sections = {
 					lualine_x = {
@@ -75,11 +75,11 @@ return {
 							require("noice").api.statusline.mode.get,
 							cond = require("noice").api.statusline.mode.has,
 							color = { fg = "#ff9e64" },
-						}
-					}
-				}
+						},
+					},
+				},
 			})
-		end
+		end,
 	},
 	-- ts-autotag: Autotag for html tags
 	{
@@ -268,5 +268,12 @@ return {
 		config = function()
 			require("supermaven-nvim").setup({})
 		end,
+	},
+	-- Substitute NVIM
+	{
+		"gbprod/substitute.nvim",
+		opts = {
+			require("substitute").setup(),
+		},
 	},
 }
