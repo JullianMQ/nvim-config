@@ -146,3 +146,4 @@ keymap.set('n', 'gu', ':UndotreeToggle<CR>', { desc = 'Show Undotree' })
 -- keymap.set('n', '<C-k>', ':TmuxNavigateUp<cr>', { silent = true, desc = 'window down' })
 -- keymap.set('n', '<C-l>', ':TmuxNavigateRight<cr>', { silent = true, desc = 'window up' })
 -- keymap.set('n', '<C-\\>', ':TmuxNavigatePrevious<cr>', { silent = true, desc = 'previous window' })
+--
