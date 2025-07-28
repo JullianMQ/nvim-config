@@ -34,7 +34,7 @@ keymap.set("v", "<", "<gv", { desc = "Indent left and reselect" })
 keymap.set("v", ">", ">gv", { desc = "Indent right and reselect" })
 
 -- Better J behavior
-vim.keymap.set("n", "J", "mzJ`z", { desc = "Join lines and keep cursor position", silent = true })
+keymap.set("n", "J", "mzJ`z", { desc = "Join lines and keep cursor position", silent = true })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
@@ -71,7 +71,7 @@ keymap.set("n", "yae", ":% y<CR>", { noremap = true, silent = true, desc = "Yank
 keymap.set("n", "<leader>yae", ':% y+"<CR>', { noremap = true, silent = true, desc = "Yank all" })
 -- keymap.set('n', '<leader>so', ':source ~/.config/nvim/init.lua<CR>', { noremap = true, silent = true, desc = 'Source main config file' })
 keymap.set("n", "<leader>so", ":source<CR>", { noremap = true, silent = true, desc = "Source config file" })
--- keymap.set('n', '-', ':Ex<CR>', { noremap = true, silent = true, desc = 'Open file explorer' })
+keymap.set("n", "-", ":Ex<CR>", { noremap = true, silent = true, desc = "Open file explorer" })
 
 -- Escape insert mode
 keymap.set("i", "jj", "<ESC>", { noremap = true, silent = true })
@@ -82,7 +82,7 @@ keymap.set("v", "q", "<ESC>", { noremap = true, silent = true })
 
 -- QuickFix List
 keymap.set("n", "<leader>sj", ":cnext<CR>", { noremap = true, silent = true, desc = "QuickFix Previous" })
-keymap.set("n", "<leader>sk", ":cnext<CR>", { noremap = true, silent = true, desc = "QuickFix Next" })
+keymap.set("n", "<leader>sk", ":cprev<CR>", { noremap = true, silent = true, desc = "QuickFix Next" })
 keymap.set("n", "<leader>sd", ":cclose<CR>", { noremap = true, silent = true, desc = "QuickFix Delete" })
 
 -- Save file
@@ -132,6 +132,7 @@ keymap.set("n", "<c-down>", "<c-w>7-", { noremap = true, silent = true })
 keymap.set("n", "<c-left>", "<c-w>7>", { noremap = true, silent = true })
 keymap.set("n", "<c-right>", "<c-w>7<", { noremap = true, silent = true })
 
+--PLUGINS======================================================================
 -- LSP
 keymap.set("n", "[o", vim.diagnostic.open_float, { desc = " open floating diagnostic" })
 keymap.set("n", "]o", vim.diagnostic.open_float, { desc = " open floating diagnostic" })
@@ -140,28 +141,31 @@ keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = " go to next diagnostic
 keymap.set("n", "gd", ":vs<CR><C-w>l<C-]>", { desc = "open documentation on right split" })
 keymap.set("n", "<C-]>", ":vs<CR><C-w>l<C-]>", { desc = "open documentation on right split" })
 
+-- Quicker Stevearc
+keymap.set("n", "<leader>st", "<cmd> lua require('quicker').toggle()<CR>", { desc = "Toggle Quicker quickfix" })
+keymap.set("n", "<leader>sl", "<cmd> lua require('quicker').toggle({ loclist = true })<CR>", { desc = "Toggle Quicker loclist" })
+
 -- Git Fugitive Stuff
+keymap.set("n", "<leader>gg", "<cmd>Git<CR>", { noremap = true, silent = true, desc = "Open git" })
 keymap.set("n", "<leader>gp", ":Git push ", { desc = "[G]it push" })
 keymap.set("n", "<leader>gl", ":Git pull ", { desc = "[G]it pull" })
-
 keymap.set("n", "<leader>gm", ':Git commit -m ""', { desc = "[G]it commit" })
 keymap.set("n", "<leader>ga", ":Git add ", { desc = " [G]it add" })
 keymap.set("n", "<leader>gd", ":Git diff ", { desc = " [G]it diff" })
-keymap.set("n", "<leader>gv", ":Gvdiffsplit!<CR>", { desc = " [G]it diff vertical split three way" })
+keymap.set("n", "<leader>gv", "<cmd>Gvdiffsplit!<CR>", { desc = " [G]it diff vertical split three way" })
 
 -- Screenkey
 -- keymap.set('n', '<leader>tsk', ':Screenkey<CR>', { desc = '[T]oggle [S]creen[K]ey' })
 
 -- UndoTree
-keymap.set("n", "gu", ":UndotreeToggle<CR>", { desc = "Show Undotree" })
+keymap.set("n", "gu", "<cmd> UndotreeToggle<CR>", { desc = "Show Undotree" })
 
--- Bufferlist
--- keymap.set('n', '<leader>e', ':BufferList<CR>', { desc = 'Show Bufferlist' })
-
--- Vim Tmux Keybinds
--- keymap.set('n', '<C-h>', ':TmuxNavigateLeft<cr>', { silent = true, desc = 'window left' })
--- keymap.set('n', '<C-j>', ':TmuxNavigateDown<cr>', { silent = true, desc = 'window right' })
--- keymap.set('n', '<C-k>', ':TmuxNavigateUp<cr>', { silent = true, desc = 'window down' })
--- keymap.set('n', '<C-l>', ':TmuxNavigateRight<cr>', { silent = true, desc = 'window up' })
--- keymap.set('n', '<C-\\>', ':TmuxNavigatePrevious<cr>', { silent = true, desc = 'previous window' })
---
+-- Substitute NVIM
+keymap.set("n", "s", "<cmd> lua require('substitute').operator()<CR>", { noremap = true })
+keymap.set("n", "ss", "<cmd> lua require('substitute').line()<CR>", { noremap = true })
+keymap.set("n", "S", "<cmd> lua require('substitute').eol()<CR>", { noremap = true })
+keymap.set("x", "s", "<cmd> lua require('substitute').visual()<CR>", { noremap = true })
+keymap.set("n", "sx", "<cmd> lua require('substitute.exchange').operator()<CR>", { noremap = true })
+keymap.set("n", "sxx", "<cmd> lua require('substitute.exchange').line()<CR>", { noremap = true })
+keymap.set("x", "X", "<cmd> lua require('substitute.exchange').visual()<CR>", { noremap = true })
+keymap.set("n", "sxc", "<cmd> lua require('substitute.exchange').cancel()<CR>", { noremap = true })

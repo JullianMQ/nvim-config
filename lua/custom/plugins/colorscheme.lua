@@ -5,7 +5,7 @@ return {
 		lazy = false,
 		priority = 1000,
 		config = function()
-			vim.cmd.colorscheme("tokyonight-storm")
+			vim.cmd.colorscheme("habamax")
 		end,
 	},
 	{
@@ -37,7 +37,7 @@ return {
 	{
 		"xiyaowong/transparent.nvim",
 		name = "transparent",
-        lazy = false,
-        priority = 1000,
+		lazy = false,
+		priority = 1000,
 	},
 }
