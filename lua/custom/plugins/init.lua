@@ -144,23 +144,46 @@ return {
 		dependencies = { "nvim-lua/plenary.nvim" },
 		config = function()
 			local harpoon = require("harpoon")
-			harpoon:setup()
+
+			-- REQUIRED
+			harpoon:setup({})
+			-- REQUIRED
+
+			-- telescope config
+			local conf = require("telescope.config").values
+			local function toggle_telescope(harpoon_files)
+				local file_paths = {}
+				for _, item in ipairs(harpoon_files.items) do
+					table.insert(file_paths, item.value)
+				end
+
+				require("telescope.pickers")
+					.new({}, {
+						prompt_title = "Harpoon",
+						finder = require("telescope.finders").new_table({
+						}),
+						results = file_paths,
+						previewer = conf.file_previewer({}),
+						sorter = conf.generic_sorter({}),
+					})
+					:find()
+			end
 			vim.keymap.set("n", "<leader>a", function()
 				harpoon:list():add()
 			end)
 			vim.keymap.set("n", "<leader>e", function()
-				harpoon.ui:toggle_quick_menu(harpoon:list())
-			end)
-			vim.keymap.set("n", "<C-m>", function()
+				toggle_telescope(harpoon:list())
+			end, { desc = "Harpoon Window" })
+			vim.keymap.set("n", "<A-1>", function()
 				harpoon:list():select(1)
 			end)
-			vim.keymap.set("n", "<C-t>", function()
+			vim.keymap.set("n", "<A-2>", function()
 				harpoon:list():select(2)
 			end)
-			vim.keymap.set("n", "<C-s>", function()
+			vim.keymap.set("n", "<A-3>", function()
 				harpoon:list():select(3)
 			end)
-			vim.keymap.set("n", "<C-n>", function()
+			vim.keymap.set("n", "<A-4>", function()
 				harpoon:list():select(4)
 			end)
 		end,
@@ -174,14 +197,6 @@ return {
 		---@type quicker.SetupOptions
 		opts = {},
 		config = function()
-			vim.keymap.set("n", "<leader>st", function()
-				require("quicker").toggle()
-			end, { desc = "Toggle Quicker quickfix" })
-
-			vim.keymap.set("n", "<leader>sl", function()
-				require("quicker").toggle({ loclist = true })
-			end, { desc = "Toggle Quicker loclist" })
-
 			require("quicker").setup({
 				keys = {
 					{
@@ -227,6 +242,17 @@ return {
 		end,
 	},
 
+	-- MARKDOWN RENDERING
+	{
+		"MeanderingProgrammer/render-markdown.nvim",
+		dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" }, -- if you use the mini.nvim suite
+		-- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
+		-- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
+		---@module 'render-markdown'
+		---@type render.md.UserConfig
+		opts = {},
+	},
+
 	-- Better Markdown Preview Controls
 	{
 		"iamcco/markdown-preview.nvim",
@@ -253,20 +279,12 @@ return {
 			require("supermaven-nvim").setup({})
 		end,
 	},
-	 
+
 	-- Substitute NVIM
 	{
 		"gbprod/substitute.nvim",
-		config = function ()
+		config = function()
 			require("substitute").setup()
-			vim.keymap.set("n", "s", require('substitute').operator, { noremap = true })
-			vim.keymap.set("n", "ss", require('substitute').line, { noremap = true })
-			vim.keymap.set("n", "S", require('substitute').eol, { noremap = true })
-			vim.keymap.set("x", "s", require('substitute').visual, { noremap = true })
-			vim.keymap.set("n", "sx", require('substitute.exchange').operator, { noremap = true })
-			vim.keymap.set("n", "sxx", require('substitute.exchange').line, { noremap = true })
-			vim.keymap.set("x", "X", require('substitute.exchange').visual, { noremap = true })
-			vim.keymap.set("n", "sxc", require('substitute.exchange').cancel, { noremap = true })
-		end
+		end,
 	},
 }
