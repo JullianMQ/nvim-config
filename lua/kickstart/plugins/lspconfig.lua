@@ -158,6 +158,7 @@ return {
         clangd = {},
         gopls = {},
         pyright = {},
+        ruff = {},
         emmet_language_server = {},
         svelte = {},
         html = {},
