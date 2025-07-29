@@ -36,6 +36,10 @@ keymap.set("v", ">", ">gv", { desc = "Indent right and reselect" })
 -- Better J behavior
 keymap.set("n", "J", "mzJ`z", { desc = "Join lines and keep cursor position", silent = true })
 
+-- HELIX KEYMAPS
+keymap.set("n", "gh", "_", { desc = "Go to first character in line" })
+keymap.set("n", "gl", "$", { desc = "Go to last character in line" })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
@@ -148,7 +152,6 @@ keymap.set("n", "<leader>sl", "<cmd> lua require('quicker').toggle({ loclist = t
 -- Git Fugitive Stuff
 keymap.set("n", "<leader>gg", "<cmd>Git<CR>", { noremap = true, silent = true, desc = "Open git" })
 keymap.set("n", "<leader>gp", ":Git push ", { desc = "[G]it push" })
-keymap.set("n", "<leader>gl", ":Git pull ", { desc = "[G]it pull" })
 keymap.set("n", "<leader>gm", ':Git commit -m ""', { desc = "[G]it commit" })
 keymap.set("n", "<leader>ga", ":Git add ", { desc = " [G]it add" })
 keymap.set("n", "<leader>gd", ":Git diff ", { desc = " [G]it diff" })
