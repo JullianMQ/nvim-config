@@ -4,7 +4,13 @@ return {
     event = "VeryLazy",
     config = function()
         require("timber").setup({
-            -- Configuration here, or leave empty to use defaults
+            default_keymaps_enabled = false,
+            keymaps = {
+                insert_log_below = "<leader>glj",
+                insert_log_above = "<leader>glk",
+                insert_batch_log = "<leader>glb",
+                insert_log_targets_to_batch = "<leader>gla",
+            }
         })
     end
 }
