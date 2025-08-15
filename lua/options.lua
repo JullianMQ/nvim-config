@@ -19,7 +19,7 @@ vim.api.nvim_create_autocmd("FileType", {
 
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = {"md", "txt", "markdown"},
-	command = "set wrap linebreak"
+	command = "set wrap linebreak colorcolumn=0"
 })
 
 -- Don't show the mode, since it's already in the status line

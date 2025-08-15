@@ -37,8 +37,8 @@ keymap.set("v", ">", ">gv", { desc = "Indent right and reselect" })
 keymap.set("n", "J", "mzJ`z", { desc = "Join lines and keep cursor position", silent = true })
 
 -- HELIX KEYMAPS
-keymap.set("n", "gh", "_", { desc = "Go to first character in line" })
-keymap.set("n", "gl", "$", { desc = "Go to last character in line" })
+keymap.set({"n", "v"}, "gh", "_", { desc = "Go to first character in line" })
+keymap.set({"n", "v"}, "gl", "$", { desc = "Go to last character in line" })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
