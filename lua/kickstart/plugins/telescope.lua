@@ -104,7 +104,7 @@ return {
       -- continue here, add searching for hidden files
       vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
       vim.keymap.set('n', '<leader>sh', ":lua require('telescope.builtin').find_files({ hidden=true})<CR>", { desc = '[S]earch [H]idden' })
-      vim.keymap.set('n', '<leader>st', ":TodoTelescope<CR>", { desc = '[S]earch [T]odo' })
+      vim.keymap.set('n', '<leader>ft', ":TodoTelescope<CR>", { desc = '[S]earch [T]odo' })
 
       -- Slightly advanced example of overriding default behavior and theme
       vim.keymap.set('n', '<leader>/', function()
