@@ -1,12 +1,14 @@
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.mouse = "a"
-vim.opt.guicursor = "n-v-c:block,i-ci-ve:block,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175"
+vim.opt.guicursor =
+	"n-v-c:block,i-ci-ve:block,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175"
 
 vim.opt.wrap = false
 vim.opt.hlsearch = false
 vim.opt.termguicolors = true
 vim.cmd("set wildmenu")
+vim.cmd("set path+=**")
 vim.cmd("set wildmode=list:longest")
 vim.o.wildignore = "*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx,*.git,~/*,*.zip"
 vim.g.autoformat = false
@@ -18,8 +20,8 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = {"md", "txt", "markdown"},
-	command = "set wrap linebreak colorcolumn=0"
+	pattern = { "md", "txt", "markdown" },
+	command = "set wrap linebreak colorcolumn=0",
 })
 
 -- Don't show the mode, since it's already in the status line
@@ -55,7 +57,7 @@ vim.opt.splitbelow = true
 --  See `:help 'list'`
 --  and `:help 'listchars'`
 vim.opt.list = true
-vim.opt.listchars = { tab = " ", trail = "·", nbsp = "␣" }
+vim.opt.listchars = { tab = "| ", trail = "·", nbsp = "␣" }
 -- vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
 -- Preview substitutions live, as you type!
@@ -66,7 +68,7 @@ vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
-vim.opt.sidescrolloff = 30
+vim.opt.sidescrolloff = 20
 
 -- Set spaces
 vim.opt.shiftwidth = 4

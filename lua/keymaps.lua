@@ -172,3 +172,9 @@ keymap.set("n", "sx", "<cmd> lua require('substitute.exchange').operator()<CR>",
 keymap.set("n", "sxx", "<cmd> lua require('substitute.exchange').line()<CR>", { noremap = true })
 keymap.set("x", "X", "<cmd> lua require('substitute.exchange').visual()<CR>", { noremap = true })
 keymap.set("n", "sxc", "<cmd> lua require('substitute.exchange').cancel()<CR>", { noremap = true })
+
+keymap.del("n", "grn")
+vim.keymap.del('n', "gra")
+vim.keymap.del('n', "grr")
+vim.keymap.del('n', "gri")
+vim.keymap.del('n', "gO" )

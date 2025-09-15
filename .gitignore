@@ -10,3 +10,4 @@ lua/plugins/~/.vim/backup/*
 .vim/*
 backup/*
 *.json
+Session.vim
