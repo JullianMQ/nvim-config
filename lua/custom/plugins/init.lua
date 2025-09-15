@@ -12,71 +12,71 @@ return {
 	},
 
 	-- Noice nvim
-	{
-		"folke/noice.nvim",
-		event = "VeryLazy",
-		dependencies = {
-			"MunifTanjim/nui.nvim",
-		},
-		config = function()
-			require("noice").setup({
-				routes = {
-					{
-						view = "notify",
-						filter = { event = "msg_showmode" },
-					},
-				},
-				views = {
-					cmdline_popup = {
-						position = {
-							row = 5,
-							col = "50%",
-						},
-						size = {
-							width = 60,
-							height = "auto",
-						},
-					},
-					popupmenu = {
-						relative = "editor",
-						position = {
-							row = 8,
-							col = "50%",
-						},
-						size = {
-							width = 60,
-							height = 10,
-						},
-						border = {
-							style = "rounded",
-							padding = { 0, 1 },
-						},
-						win_options = {
-							winhighlight = { Normal = "Normal", FloatBorder = "DiagnosticInfo" },
-						},
-					},
-				},
-			})
-		end,
-	},
+	-- {
+	-- 	"folke/noice.nvim",
+	-- 	event = "VeryLazy",
+	-- 	dependencies = {
+	-- 		"MunifTanjim/nui.nvim",
+	-- 	},
+	-- 	config = function()
+	-- 		require("noice").setup({
+	-- 			routes = {
+	-- 				{
+	-- 					view = "notify",
+	-- 					filter = { event = "msg_showmode" },
+	-- 				},
+	-- 			},
+	-- 			views = {
+	-- 				cmdline_popup = {
+	-- 					position = {
+	-- 						row = 5,
+	-- 						col = "50%",
+	-- 					},
+	-- 					size = {
+	-- 						width = 60,
+	-- 						height = "auto",
+	-- 					},
+	-- 				},
+	-- 				popupmenu = {
+	-- 					relative = "editor",
+	-- 					position = {
+	-- 						row = 8,
+	-- 						col = "50%",
+	-- 					},
+	-- 					size = {
+	-- 						width = 60,
+	-- 						height = 10,
+	-- 					},
+	-- 					border = {
+	-- 						style = "rounded",
+	-- 						padding = { 0, 1 },
+	-- 					},
+	-- 					win_options = {
+	-- 						winhighlight = { Normal = "Normal", FloatBorder = "DiagnosticInfo" },
+	-- 					},
+	-- 				},
+	-- 			},
+	-- 		})
+	-- 	end,
+	-- },
 	-- Lualine
-	{
-		"nvim-lualine/lualine.nvim",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-		config = function()
-			require("lualine").setup({
-				sections = {
-					lualine_x = {
-						{
-							require("noice").api.statusline.mode.get,
-							cond = require("noice").api.statusline.mode.has,
-							color = { fg = "#ff9e64" },
-						},
-					},
-				},
-			})
-		end,
-	},
+	-- {
+	-- 	"nvim-lualine/lualine.nvim",
+	-- 	dependencies = { "nvim-tree/nvim-web-devicons" },
+	-- 	config = function()
+	-- 		require("lualine").setup({
+	-- 			sections = {
+	-- 				lualine_x = {
+	-- 					{
+	-- 						require("noice").api.statusline.mode.get,
+	-- 						cond = require("noice").api.statusline.mode.has,
+	-- 						color = { fg = "#ff9e64" },
+	-- 					},
+	-- 				},
+	-- 			},
+	-- 		})
+	-- 	end,
+	-- },
 	-- ts-autotag: Autotag for html tags
 	{
 		"windwp/nvim-ts-autotag",
@@ -149,30 +149,11 @@ return {
 			harpoon:setup({})
 			-- REQUIRED
 
-			-- telescope config
-			local conf = require("telescope.config").values
-			local function toggle_telescope(harpoon_files)
-				local file_paths = {}
-				for _, item in ipairs(harpoon_files.items) do
-					table.insert(file_paths, item.value)
-				end
-
-				require("telescope.pickers")
-					.new({}, {
-						prompt_title = "Harpoon",
-						finder = require("telescope.finders").new_table({
-						}),
-						results = file_paths,
-						previewer = conf.file_previewer({}),
-						sorter = conf.generic_sorter({}),
-					})
-					:find()
-			end
 			vim.keymap.set("n", "<leader>a", function()
 				harpoon:list():add()
 			end)
 			vim.keymap.set("n", "<leader>e", function()
-				toggle_telescope(harpoon:list())
+				harpoon.ui:toggle_quick_menu(harpoon:list())
 			end, { desc = "Harpoon Window" })
 			vim.keymap.set("n", "<A-1>", function()
 				harpoon:list():select(1)
