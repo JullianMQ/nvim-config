@@ -1,11 +1,19 @@
+-- local function enable_transparency() -- took this from tonybanters config
+-- 	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+-- 	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+-- 	vim.api.nvim_set_hl(0, "LineNr", { bg = "none" })
+-- end
+
 return {
 	{
 		"sainnhe/gruvbox-material",
-		name = "gruvbox-material",
-		lazy = false,
+		name = "gruvbox-material", lazy = false,
 		priority = 1000,
 		config = function()
-			vim.cmd.colorscheme("habamax")
+			vim.cmd.colorscheme("tokyonight-storm")
+			-- vim.cmd("hi Directory guibg=NONE")
+			-- vim.cmd("hi SignColumn guibg=NONE")
+			-- enable_transparency()
 		end,
 	},
 	{
@@ -31,12 +39,6 @@ return {
 	{
 		"rebelot/kanagawa.nvim",
 		name = "kanagawa",
-		lazy = false,
-		priority = 1000,
-	},
-	{
-		"xiyaowong/transparent.nvim",
-		name = "transparent",
 		lazy = false,
 		priority = 1000,
 	},
