@@ -26,7 +26,8 @@ return {
           --    See the README about individual language/framework/plugin snippets:
           --    https://github.com/rafamadriz/friendly-snippets
           -- {
-          'rafamadriz/friendly-snippets',
+          -- 'rafamadriz/friendly-snippets',
+          'honza/vim-snippets',
           config = function()
             -- require('luasnip.loaders.from_vscode').lazy_load()
             -- require("luasnip.loaders.from_lua").load("~/.config/nvim/lua/snippets")
@@ -106,6 +107,7 @@ return {
             group_index = 0,
           },
           { name = 'luasnip' },
+          { name = 'laravel' },
           { name = 'nvim_lsp' },
           { name = 'path' },
         },
@@ -116,14 +118,6 @@ return {
         sources = {
           { name = 'buffer' },
         },
-      })
-
-      cmp.setup({
-        sources = cmp.config.sources({
-          { name = 'laravel' },
-          { name = 'nvim_lsp' },
-          { name = 'buffer' },
-        })
       })
 
       -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).

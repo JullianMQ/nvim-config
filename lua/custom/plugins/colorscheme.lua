@@ -1,8 +1,8 @@
--- local function enable_transparency() -- took this from tonybanters config
--- 	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
--- 	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
--- 	vim.api.nvim_set_hl(0, "LineNr", { bg = "none" })
--- end
+local function enable_transparency() -- took this from tonybanters config
+	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+	vim.api.nvim_set_hl(0, "LineNr", { bg = "none" })
+end
 
 return {
 	{

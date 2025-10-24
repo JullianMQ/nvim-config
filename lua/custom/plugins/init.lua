@@ -167,6 +167,9 @@ return {
 			vim.keymap.set("n", "<A-4>", function()
 				harpoon:list():select(4)
 			end)
+			vim.keymap.set("n", "<A-5>", function()
+				harpoon:list():select(5)
+			end)
 		end,
 	},
 
