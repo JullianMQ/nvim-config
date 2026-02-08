@@ -111,8 +111,8 @@ keymap.set(
 )
 -- delete all buffers except current
 
-keymap.set("n", "<leader>o", "o<ESC>", { noremap = true, silent = true, desc = "Add line below" })
-keymap.set("n", "<leader>O", "O<ESC>", { noremap = true, silent = true, desc = "Add line above" })
+-- keymap.set("n", "<leader>o", "o<ESC>", { noremap = true, silent = true, desc = "Add line below" })
+-- keymap.set("n", "<leader>O", "O<ESC>", { noremap = true, silent = true, desc = "Add line above" })
 
 -- Navigate buffers
 keymap.set("n", "<leader>h", ":bn<CR>", { noremap = true, silent = true, desc = "Go to next buffer" })
@@ -152,7 +152,7 @@ keymap.set("n", "<leader>gv", "<cmd>Gvdiffsplit!<CR>", { desc = " [G]it diff ver
 -- keymap.set('n', '<leader>tsk', ':Screenkey<CR>', { desc = '[T]oggle [S]creen[K]ey' })
 
 -- UndoTree
-keymap.set("n", "gu", "<cmd> UndotreeToggle<CR>", { desc = "Show Undotree" })
+keymap.set("n", "gu", "<cmd>lua require('undotree').toggle()<CR>", { desc = "Show Undotree" })
 
 -- Substitute NVIM
 keymap.set("n", "s", "<cmd> lua require('substitute').operator()<CR>", { noremap = true })
@@ -170,5 +170,14 @@ keymap.del("n", "gra")
 keymap.del("n", "grr")
 keymap.del("n", "gri")
 keymap.del("n", "gO")
+keymap.del("n", "<leader><leader>")
 
 keymap.set("n", "<C-E>", "<cmd> lua Snacks.explorer()<CR>", { silent = true })
+
+keymap.set("n", "<leader>gt", function()
+    local enabled = not vim.lsp.inlay_hint.is_enabled({})
+    vim.lsp.inlay_hint.enable(enabled)
+    vim.notify("Inlay hints: " .. (enabled and " on" or "off"))
+end, { buffer = 0, desc = "Inlay [H]int [T]oggle" })
+
+keymap.del({ "n", "t" }, "<c-/>")
