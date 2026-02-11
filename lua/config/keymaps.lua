@@ -172,8 +172,6 @@ keymap.del("n", "gri")
 keymap.del("n", "gO")
 keymap.del("n", "<leader><leader>")
 
-keymap.set("n", "<C-E>", "<cmd> lua Snacks.explorer()<CR>", { silent = true })
-
 keymap.set("n", "<leader>gt", function()
     local enabled = not vim.lsp.inlay_hint.is_enabled({})
     vim.lsp.inlay_hint.enable(enabled)
